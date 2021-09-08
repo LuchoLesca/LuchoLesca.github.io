@@ -1,0 +1,166 @@
+:root {
+	--red: hsl(0, 78%, 62%);
+	--cyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+	--white: #fff;
+
+	--very-dark-blue: hsl(234, 12%, 34%);
+	--grayish-blue: hsl(229, 6%, 66%);
+	--very-light-gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+body,
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+/* Layouts */
+
+body {
+	min-height: 100vh;
+	min-width: 360px;
+	padding: 4.8em 2.2em;
+	font-size: 15px;
+	font-family: "Poppins", sans-serif;
+	background: var(--very-light-gray);
+}
+
+.header {
+	margin-bottom: 5em;
+	text-align: center;
+}
+
+.header__title {
+	margin-bottom: 0.8em;
+	color: var(--very-dark-blue);
+	font-weight: 200;
+	font-size: 1.5rem;
+}
+
+.header__title b {
+	font-weight: 600;
+}
+
+.header__subtitle {
+	max-width: 500px;
+	margin: 0 auto;
+	color: var(--grayish-blue);
+	font-weight: 400;
+	line-height: 1.7;
+}
+
+.main-content,
+.middle-articles-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+}
+
+.article {
+	position: relative;
+	width: min(350px, 100%);
+	padding: 1.7em 2em;
+	box-shadow: 0 10px 15px #83a7d256;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.article::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 4px;
+	top: 0;
+	left: 0;
+}
+
+.article__title {
+	font-size: 1.3rem;
+}
+
+.article__description {
+	margin-bottom: 3em;
+	font-size: 0.8rem;
+	color: var(--grayish-blue);
+	line-height: 1.6;
+}
+
+.article__icon {
+	margin-left: auto;
+	width: 3.8em;
+}
+
+/* Top card decoration */
+.supervisor::before {
+	background-color: var(--cyan);
+}
+.team-builder::before {
+	background-color: var(--red);
+}
+.karma::before {
+	background-color: var(--orange);
+}
+.calculator::before {
+	background-color: var(--blue);
+}
+
+@media screen and (min-width: 720px) {
+	.header__title {
+		font-size: 2.3rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body {
+		padding: 4em 2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.header__title {
+		margin-bottom: 0.6em;
+	}
+
+	.main-content {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.main-content > * {
+		flex-basis: 350px;
+	}
+
+	.article {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+
+	.article__title {
+		margin-bottom: 0.6em;
+	}
+
+	.article__description {
+		line-height: 1.8;
+	}
+
+	.article__icon {
+		width: 4.5em;
+	}
+}

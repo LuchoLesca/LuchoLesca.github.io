@@ -1,0 +1,128 @@
+:root {
+	--bright-orange: hsl(31, 77%, 52%);
+	--dark-cyan: hsl(184, 100%, 22%);
+	--very-dark-cyan: hsl(179, 100%, 13%);
+
+	--transparent-white: hsla(0, 0%, 100%, 0.75); /* Paragraphs */
+	--very-light-gray: hsl(0, 0%, 95%); /* Background, headings, buttons */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+p,
+body {
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	width: 100vw;
+	padding: 6em 1.2em;
+	font-family: "Lexend Deca", sans-serif;
+	color: white;
+}
+
+.cards {
+	display: inline-flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	border-radius: 0.7em;
+	overflow: hidden;
+}
+
+.card {
+	max-width: 335px;
+	padding: 2.8em 2.5em 4em;
+}
+
+@media screen and (min-width: 768px) {
+	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 545px;
+		padding: 3.2em 3.6em 3em 3.2em;
+	}
+
+	.card__img {
+		max-height: 45px;
+	}
+}
+
+.card-one {
+	background-color: var(--bright-orange);
+}
+
+.card-two {
+	background-color: var(--dark-cyan);
+}
+
+.card-three {
+	background-color: var(--very-dark-cyan);
+}
+
+.card__title {
+	margin: 0.7em 0;
+	font-size: 2.5rem;
+	font-family: "Big Shoulders Display", cursive;
+	text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+	.card__title {
+		font-size: 2.8rem;
+	}
+}
+
+.card__text {
+	font-size: 0.95rem;
+	color: var(--transparent-white);
+	line-height: 1.7;
+	margin-bottom: 2.4em;
+}
+
+@media screen and (min-width: 768px) {
+	.card__text {
+		font-size: 1rem;
+	}
+}
+
+.card__btn {
+	background-color: white;
+	padding: 1em 2em;
+	border-radius: 25px;
+	font-size: 0.95rem;
+	color: #000;
+	mix-blend-mode: screen;
+}
+
+@media screen and (min-width: 768px) {
+	.card__btn {
+		margin-top: auto;
+		padding-left: 2.5em;
+		padding-right: 2.5em;
+	}
+
+	.card__btn:hover {
+		background-color: transparent;
+		border: 2px solid white;
+		color: white;
+	}
+}
