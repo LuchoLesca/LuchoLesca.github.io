@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="slide-arrows-container" id="slider">
+				<img
+					src="./assets/images/icon-arrow.svg"
+					alt="arrow-left"
+					class="arrow-left"
+					data-direction="left"
+				/>
+				<img
+					src="./assets/images/icon-arrow.svg"
+					alt="arrow-right"
+					class="arrow-right"
+					data-direction="right"
+				/>
+			</div>
+			<section class="cards" id="cards">
+				<article class="card">
+					<header class="card__header">
+						<img
+							id="img"
+							src="./assets/images/image-tanya.jpg"
+							alt="tanya-sinclair"
+							class="card__img"
+						/>
+					</header>
+					<p class="card__description" id="description">
+						“ I’ve been interested in coding for a while but never taken the
+						jump, until now. I couldn’t recommend this course enough. I’m now in
+						the job of my dreams and so excited about the future. ”
+					</p>
+					<footer class="card__footer">
+						<h2 class="card__name" id="name">Tanya Sinclair</h2>
+						<h3 class="card__job" id="job">UX Engineer</h3>
+					</footer>
+				</article>
+				<article class="card">
+					<header class="card__header">
+						<img
+							src="./assets/images/image-john.jpg"
+							alt="john-tarkpor"
+							class="card__img"
+						/>
+					</header>
+					<blockquote class="card__description">
+						“ If you want to lay the best foundation possible I’d recommend
+						taking this course. The depth the instructors go into is incredible.
+						I now feel so confident about starting up as a professional
+						developer. ”
+					</blockquote>
+					<footer class="card__footer">
+						<h2 class="card__name">John Tarkpor</h2>
+						<h3 class="card__job">Junior Front-end Developer</h3>
+					</footer>
+				</article>
+			</section>
+		</div>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
