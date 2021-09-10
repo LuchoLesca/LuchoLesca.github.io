@@ -1,0 +1,122 @@
+:root {
+	/* #### Text */
+	/* ### Primary */
+	--very-dark-desaturated-blue: hsl(238, 29%, 16%);
+	--soft-red: hsl(14, 88%, 65%);
+	/* ### Neutral */
+	--very-dark-grayish-blue: hsl(237, 12%, 33%);
+	--dark-grayish-blue: hsl(240, 6%, 50%);
+	/* #### Dividers */
+	--light-grayish-blue: hsl(240, 5%, 91%);
+
+	/* #### Gradient */
+	/* Background gradient: */
+
+	--soft-violet: hsl(273, 75%, 66%);
+	--soft-blue: hsl(240, 73%, 65%);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+h1,
+p,
+body {
+	margin: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	min-height: 100vh;
+	width: 100vw;
+	background: linear-gradient(var(--soft-violet), var(--soft-blue));
+	font-size: 12px;
+	font-family: "Kumbh Sans", sans-serif;
+	font-weight: 400;
+}
+
+.container {
+	position: relative;
+	width: 88%;
+	margin-top: 14em;
+	padding-top: 10.5em;
+	padding-bottom: 4em;
+	background-color: #fff;
+	border-radius: 2em;
+}
+
+.logo {
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: 200px;
+	transform: translateY(-50%);
+}
+
+.logo__shadow,
+.logo__canvas {
+	position: absolute;
+	max-width: 100%;
+	bottom: 0;
+}
+
+.logo__canvas {
+	object-position: -1em;
+	bottom: 1em;
+}
+
+.title {
+	margin-bottom: 0.45em;
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.questions {
+	display: flex;
+	flex-direction: column;
+	padding: 0 1.8em;
+}
+
+.question-container {
+	padding: 1.45em 0;
+	border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.question__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.85rem;
+	color: var(--very-dark-grayish-blue);
+}
+
+.question__answer {
+	display: none;
+	width: 91%;
+	line-height: 1.4;
+	color: var(--dark-grayish-blue);
+}
+
+/* Question selected */
+.question--selected .question__header {
+	margin-bottom: 1em;
+	color: black;
+	font-weight: 700;
+}
+
+.question--selected .question__answer {
+	display: inline-block;
+}
+
+.question--selected .arrow-down {
+	transform: rotateX(180deg);
+}

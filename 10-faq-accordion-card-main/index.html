@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Frontend Mentor | FAQ Accordion Card</title>
+	</head>
+	<body>
+		<section class="container">
+			<div class="logo">
+				<img
+					src="./assets/images/illustration-woman-online-mobile.svg"
+					alt="canvas"
+					class="logo__canvas"
+				/>
+				<img
+					src="./assets/images/bg-pattern-mobile.svg"
+					alt="shadow"
+					class="logo__shadow"
+				/>
+			</div>
+			<h1 class="title">FAQ</h1>
+			<div class="questions">
+				<article class="question-container">
+					<header class="question__header" id="question-header">
+						<p class="question__text">How many team members can I invite?</p>
+						<img
+							src="./assets/images/icon-arrow-down.svg"
+							alt="arrow"
+							class="arrow-down"
+						/>
+					</header>
+					<main class="question__answer">
+						You can invite up to 2 additional users on the Free plan. There is
+						no limit on team members for the Premium plan.
+					</main>
+				</article>
+				<article class="question-container question--selected">
+					<header class="question__header" id="question-header">
+						<p class="question__text">What is the maximum file upload size?</p>
+						<img
+							src="./assets/images/icon-arrow-down.svg"
+							alt="arrow"
+							class="arrow-down"
+						/>
+					</header>
+					<main class="question__answer">
+						No more than 2GB. All files in your account must fit your allotted
+						storage space.
+					</main>
+				</article>
+				<article class="question-container">
+					<header class="question__header" id="question-header">
+						<p class="question__text">How do I reset my password?</p>
+						<img
+							src="./assets/images/icon-arrow-down.svg"
+							alt="arrow"
+							class="arrow-down"
+						/>
+					</header>
+					<main class="question__answer">
+						Click “Forgot password” from the login page or “Change password”
+						from your profile page. A reset link will be emailed to you.
+						clas="title"
+					</main>
+				</article>
+				<article class="question-container">
+					<header class="question__header" id="question-header">
+						<p class="question__text">Can I cancel my subscription?</p>
+						<img
+							src="./assets/images/icon-arrow-down.svg"
+							alt="arrow"
+							class="arrow-down"
+						/>
+					</header>
+					<main class="question__answer">
+						Yes! Send us a message and we’ll process your request no questions
+						asked.
+					</main>
+				</article>
+				<article class="question-container">
+					<header class="question__header" id="question-header">
+						<p class="question__text">Do you provide additional support?</p>
+						<img
+							src="./assets/images/icon-arrow-down.svg"
+							alt="arrow"
+							class="arrow-down"
+						/>
+					</header>
+					<main class="question__answer">
+						Chat and email support is available 24/7. Phone lines are open
+						during normal business hours.
+					</main>
+				</article>
+			</div>
+		</section>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
