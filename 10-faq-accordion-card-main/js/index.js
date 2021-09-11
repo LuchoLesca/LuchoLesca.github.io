@@ -1,7 +1,7 @@
-const $headers = document.querySelectorAll("#question-header")
+const $headers = document.querySelectorAll("#accordion-header")
 
-/* $headers.forEach((header) => {
+$headers.forEach((header) => {
 	header.addEventListener("click", (e) => {
-		console.log(e)
+		e.target.parentElement.classList.toggle("collapse--show")
 	})
-}) */
+})
