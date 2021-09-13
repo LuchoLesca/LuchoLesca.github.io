@@ -12,8 +12,8 @@
 	/* #### Gradient */
 	/* Background gradient: */
 
-	--soft-violet: hsl(273, 75%, 66%); /*#af67e9*/
-	--soft-blue: hsl(240, 73%, 65%); /*	#6565e7*/
+	--soft-violet: hsl(273, 75%, 66%);
+	--soft-blue: hsl(240, 73%, 65%);
 }
 
 *,
@@ -145,14 +145,24 @@ body {
 		padding: unset;
 	}
 
+	.card > * {
+		flex: 0 0 50%;
+		height: 100%;
+	}
+
 	.card__logo {
 		position: relative;
 		transform: unset;
 	}
 
-	.card > * {
-		flex: 1;
+	.logo__illustration {
+		background-image: url("../assets/images/illustration-woman-online-desktop.svg"),
+			url("../assets/images/bg-pattern-desktop.svg");
+		background-position: right center, right -24.3em;
+		background-repeat: no-repeat;
+		margin-right: 6em;
 		height: 100%;
+		width: auto;
 	}
 
 	.title {
@@ -161,8 +171,8 @@ body {
 	}
 
 	.card__text {
-		padding-top: 5.2em;
-		padding-left: 10.5em;
+		padding-top: 5.1em;
+		padding-left: 1.4em;
 		padding-right: 8em;
 	}
 
