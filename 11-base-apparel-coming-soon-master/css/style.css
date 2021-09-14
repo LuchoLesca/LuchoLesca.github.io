@@ -1,0 +1,143 @@
+:root {
+	/* ## Colors */
+
+	/* ### Primary */
+	--desaturated-red: hsl(0, 36%, 70%);
+	--soft-red: hsl(0, 93%, 68%);
+
+	/* ### Neutral */
+	--dark-grayish-red: hsl(0, 6%, 24%);
+
+	/* ### Gradients */
+
+	/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
+	/* - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+
+	/* ### Font */
+
+	/* - Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans) */
+	/* - Weights: 300, 400, 600 */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+h1,
+p,
+body {
+	margin: 0;
+}
+
+input {
+	font: inherit;
+}
+
+body {
+	min-height: 100vh;
+	width: 100vw;
+	font-size: 16px;
+	font-family: "Josefin Sans", sans-serif;
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+.card {
+	min-width: 360px;
+}
+
+.logo {
+	padding: 1.95em;
+	padding-bottom: 1.6em;
+}
+
+.logo img {
+	height: 1.35em;
+}
+
+.image-wrapper {
+	height: 250px;
+	/* overflow: hidden; */
+}
+
+.image {
+	background-image: url("../assets/images/hero-mobile.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+}
+
+.content {
+	text-align: center;
+	padding: 4em 2.3em;
+}
+
+.title {
+	color: var(--dark-grayish-red);
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 2.5rem;
+	letter-spacing: 0.3em;
+	line-height: 1.05;
+}
+
+.title span {
+	font-weight: 300;
+}
+
+.title span,
+.text,
+.input__text {
+	color: var(--desaturated-red);
+}
+
+.text {
+	padding: 1.2em 0;
+	font-size: 0.89em;
+	line-height: 1.5;
+}
+
+.input {
+	position: relative;
+	height: 3em;
+	margin-top: 1em;
+}
+
+.input__text,
+.input__btn {
+	height: 100%;
+}
+
+.input__text {
+	padding-left: 1.7em;
+	width: 100%;
+	background: transparent;
+	font-size: 0.9rem;
+	font-weight: 400;
+	border: 1px solid rgba(206, 151, 151, 0.6);
+	border-radius: 1.5rem;
+}
+
+.input__text:focus {
+	color: black;
+}
+
+.input__btn {
+	position: absolute;
+	right: 0;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 4em;
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	box-shadow: 5px 10px 20px rgba(238, 140, 140, 0.5);
+	border-radius: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+}
