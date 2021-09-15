@@ -29,23 +29,28 @@
 			</div>
 			<div class="content">
 				<h1 class="title"><span>We're</span> coming soon</h1>
-				<p class="text">
+				<p class="description">
 					Hello fellow shoppers! We're currently building our new fashion store.
 					Add your email below to stay up-to-date with announcements and our
 					launch deals.
 				</p>
-				<div class="input">
+				<div class="input" id="input">
 					<input
 						class="input__text"
 						type="email"
-						name="email"
-						id="email"
+						id="input-email"
 						placeholder="Email Address"
 					/>
-					<a href="#" class="input__btn">
+					<img
+						src="./assets/images/icon-error.svg"
+						alt="icon error"
+						class="input__error-icon"
+					/>
+					<a href="#" class="input__btn" id="input-btn">
 						<img src="./assets/images/icon-arrow.svg" alt="arrow" />
 					</a>
 				</div>
+				<p class="input__error-msg">Please provide a valid email</p>
 			</div>
 		</div>
 		<script src="./js/index.js"></script>
