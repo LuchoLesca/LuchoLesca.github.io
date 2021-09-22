@@ -1,0 +1,169 @@
+:root {
+	--blue: hsl(223, 87%, 63%);
+	/* ### Secondary */
+	--pale-blue: hsl(223, 100%, 88%);
+	--light-red: hsl(354, 100%, 66%);
+
+	/* ### Neutral */
+	--gray: hsl(0, 0%, 59%);
+	--very-dark-blue: hsl(210, 32%, 12%);
+
+	/* FontWieh: 300, 600, 700 */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+p,
+body {
+	margin: 0;
+}
+
+img {
+	object-fit: contain;
+	max-width: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	/* background-color: rgba(159, 0, 0, 0.15); */
+	min-height: 100vh;
+	width: 100vw;
+	font-family: "Libre Franklin", sans-serif;
+	font-size: 20px;
+	color: var(--gray);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	width: 360px;
+	margin: 3.1em auto;
+	/* outline: 2px solid black; */
+}
+
+.logo {
+	height: 0.95em;
+	margin-bottom: 2.2em;
+}
+
+.title {
+	margin-bottom: 0.85em;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.title span {
+	font-weight: 700;
+	color: var(--very-dark-blue);
+}
+
+.msg {
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin-bottom: 2.5em;
+}
+
+.form-wrapper {
+	height: 8.85em;
+}
+
+.form {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.6em;
+	width: 310px;
+}
+
+.form > * {
+	width: 100%;
+}
+
+.form__input,
+.form__btn {
+	height: 44px;
+	font-family: "Libre Franklin", sans-serif;
+	border: 1px solid;
+	border-radius: 22px;
+	font-size: 13px;
+}
+
+.form__input {
+	width: 100%;
+	display: block;
+	padding-left: 3em;
+	color: var(--pale-blue);
+}
+
+.form__input:focus {
+	color: initial;
+	border-color: var(--pale-blue);
+	outline: none;
+}
+
+.form__btn {
+	background-color: var(--blue);
+	border-color: var(--blue);
+	font-weight: 600;
+	color: white;
+	box-shadow: 0 10px 10px rgba(193, 211, 255, 0.5);
+}
+
+.form__error-msg {
+	display: none;
+	font-style: italic;
+	font-size: 0.7rem;
+	color: var(--light-red);
+	margin: 0.6em 0 1.3em;
+}
+
+/* Error */
+.error .form__error-msg {
+	display: block;
+}
+
+.error .form__input {
+	border-color: var(--light-red);
+}
+/* Error end */
+
+.illustration {
+	margin-bottom: 5.9em;
+}
+
+.socials {
+	display: flex;
+	justify-content: center;
+	gap: 0.6em;
+	padding-left: 0;
+	margin-bottom: 1.5em;
+	color: var(--blue);
+}
+
+.social__item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 1.6em;
+	width: 1.6em;
+	border: 1px solid var(--pale-blue);
+	border-radius: 50%;
+}
+
+.copy {
+	font-size: 0.7rem;
+}

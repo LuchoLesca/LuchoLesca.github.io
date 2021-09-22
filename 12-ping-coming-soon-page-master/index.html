@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- favicon -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Icons -->
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<title>Frontend Mentor | Ping coming soon page</title>
+	</head>
+	<body>
+		<section class="container">
+			<img src="./assets/images/logo.svg" alt="logo" class="logo" />
+			<h1 class="title">We are lauching <span>soon!</span></h1>
+			<p class="msg">Subscribe and get notified</p>
+			<div class="form-wrapper">
+				<form class="form" id="form" action="#">
+					<div class="input-wrapper">
+						<input
+							placeholder="Your email addres..."
+							class="form__input"
+							id="input-email"
+							name="email"
+						/>
+						<p class="form__error-msg">Please provide a valid email address</p>
+					</div>
+					<button type="submit" class="form__btn">Notify Me</button>
+				</form>
+			</div>
+			<img
+				src="./assets/images/illustration-dashboard.png"
+				alt="dashboard"
+				class="illustration"
+			/>
+			<footer class="footer">
+				<ul class="socials">
+					<li class="social__item">
+						<a href="#"><i class="fab fa-facebook-f fa-xs"></i></a>
+					</li>
+					<li class="social__item">
+						<a href="#"><i class="fab fa-twitter fa-xs"></i></a>
+					</li>
+					<li class="social__item">
+						<a href="#"><i class="fab fa-instagram fa-sm"></i></a>
+					</li>
+				</ul>
+				<p class="copy">&copy; Copyright Ping. All rights reserved.</p>
+			</footer>
+		</section>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
