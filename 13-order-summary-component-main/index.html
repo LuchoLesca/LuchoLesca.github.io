@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,500;0,700;0,900;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Frontend Mentor | Order summary card</title>
+	</head>
+	<body>
+		<article class="card">
+			<header class="card__header">
+				<img
+					src="./assets/images/illustration-hero.svg"
+					alt="illustration hero"
+				/>
+			</header>
+			<main class="card__content">
+				<div class="card__text">
+					<h1 class="title">Order Summary</h1>
+					<p class="description">
+						You can now listen to millions of songs, audiobooks, and podcasts on
+						any device anywhere you like!
+					</p>
+				</div>
+				<div class="payment-wrapper">
+					<img src="./assets/images/icon-music.svg" alt="icon music" />
+					<div class="payment">
+						<p class="payment__plan">Annual Plan</p>
+						<p class="payment__price">$59.99/year</p>
+					</div>
+					<a href="#" class="payment__change">Change</a>
+				</div>
+				<footer class="card__footer">
+					<a href="#" class="btn btn-payment">Procced to Payment</a>
+					<a href="#" class="btn btn-cancel">Cancel Order</a>
+				</footer>
+			</main>
+		</article>
+	</body>
+</html>
