@@ -96,9 +96,9 @@ body {
 
 .payment-wrapper {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	padding: 1.2em;
+	gap: 1.5em;
 	background-color: var(--very-pale-blue);
 	border-radius: 0.7em;
 	font-size: 0.9rem;
@@ -110,6 +110,7 @@ body {
 }
 
 .payment__change {
+	margin-left: auto;
 	font-size: 0.85rem;
 	font-weight: 700;
 	color: var(--bright-blue);
@@ -138,5 +139,56 @@ body {
 
 .btn-cancel {
 	color: var(--desaturated-blue);
-	/* outline: 1px solid black; */
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		max-width: 1440px;
+		max-height: 900px;
+		background-image: url("../assets/images/pattern-background-desktop.svg");
+	}
+
+	.card {
+		width: 440px;
+	}
+
+	.card__content {
+		gap: 1em;
+		padding: 2.55em 3em 2em;
+	}
+
+	.title {
+		margin-bottom: 0.7em;
+		font-size: 1.6rem;
+	}
+
+	.description {
+		line-height: 1.6;
+	}
+
+	.payment-wrapper {
+		padding: 1.8em;
+		font-size: 1rem;
+	}
+
+	.payment__change:hover {
+		text-decoration: none;
+		opacity: 0.7;
+	}
+
+	.card__footer {
+		margin-top: 0.5em;
+	}
+
+	.btn-payment {
+		margin-bottom: 1.1em;
+	}
+
+	.btn-payment:hover {
+		opacity: 0.7;
+	}
+
+	.btn-cancel:hover {
+		color: var(--dark-blue);
+	}
 }
