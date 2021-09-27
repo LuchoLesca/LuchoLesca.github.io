@@ -51,7 +51,8 @@ body {
 }
 
 .card {
-	width: 328px;
+	/* width: 328px; */
+	width: clamp(328px, 87%, 440px);
 	background-color: var(--white);
 	text-align: center;
 	overflow: hidden;
@@ -146,10 +147,7 @@ body {
 		max-width: 1440px;
 		max-height: 900px;
 		background-image: url("../assets/images/pattern-background-desktop.svg");
-	}
-
-	.card {
-		width: 440px;
+		margin: 0 auto;
 	}
 
 	.card__content {
