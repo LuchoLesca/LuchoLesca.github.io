@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<!-- JS -->
+		<script src="./js/index.js" defer></script>
+
+		<title>Frontend Mentor | Intro component with sign up form</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<div class="text-wrapper">
+					<h1 class="title">Learn to code by watching others</h1>
+					<p class="paragraph">
+						See how experienced developers solve problems in real-time. Watching
+						scripted tutorials is great, but understanding how developers think
+						is invaluable.
+					</p>
+				</div>
+				<div class="form-wrapper">
+					<a href="#" class="btn try-btn">
+						<span>Try it free 7 days</span> then $20/mo. thereafter
+					</a>
+					<form class="form">
+						<!-- First Name -->
+						<div class="input-group">
+							<input type="text" placeholder="First Name" />
+							<p class="error-msg">First Name cannot be empty</p>
+						</div>
+						<!-- Lasti Name -->
+						<div class="input-group">
+							<input type="text" placeholder="Last Name" />
+							<p class="error-msg">Last Name cannot be empty</p>
+						</div>
+						<!-- Email Addres -->
+						<div class="input-group">
+							<input type="email" placeholder="Email Addres" />
+							<p class="error-msg">Looks like this is not an email</p>
+						</div>
+						<!-- Password -->
+						<div class="input-group">
+							<input type="password" placeholder="Password" />
+							<p class="error-msg">Password cannot be empty</p>
+						</div>
+
+						<!-- Submit Btn -->
+						<button type="submit">Claim your free trial</button>
+
+						<p class="terms">
+							By clicking the button, you are agreeing to our
+							<span>Terms and Services</span>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
