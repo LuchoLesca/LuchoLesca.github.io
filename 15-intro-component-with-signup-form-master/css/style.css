@@ -2,24 +2,19 @@
 	/* ## Colors */
 
 	/* ### Primary */
-
 	--red: hsl(0, 100%, 74%);
 	--green: hsl(154, 59%, 51%);
-
-	/* ### Accent */
-
 	--blue: hsl(248, 32%, 49%);
 
 	/* ### Neutral */
-
 	--dark-blue: hsl(249, 10%, 26%);
 	--grayish-blue: hsl(246, 25%, 77%);
 	--white: hsl(0, 100%, 100%);
-	/* - Weights: 400, 500, 600, 700 */
 
+	/* ## Fonts */
 	--fs-xl: 1.75rem;
 	--fs-md: 1rem;
-	--fs-s: 0.68rem;
+	--fs-s: 0.65rem;
 }
 
 *,
@@ -41,20 +36,23 @@ body {
 	width: 100vw;
 	font-family: "Poppins", sans-serif;
 	color: var(--white);
-	background: url("../assets/images/bg-intro-mobile.png") no-repeat, var(--red);
+	background-image: url("../assets/images/bg-intro-mobile.png");
+	background-repeat: no-repeat;
+	background-color: var(--red);
+	background-size: cover;
 }
 
 /* Containers and Wrapper */
 .container {
-	min-height: 100%;
-	/* background-color: rgba(0, 0, 0, 0.2); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .wrapper {
-	width: 87%;
 	padding-top: 5.7em;
-	padding-bottom: 4.8em;
-	margin: 0 auto;
+	padding-bottom: 4.2em;
+	width: 87%;
 	text-align: center;
 }
 
@@ -109,14 +107,14 @@ body {
 }
 
 .input-group {
-	margin-bottom: 1em;
+	position: relative;
+	margin-bottom: 1.05em;
 }
 
 .input,
 .btn-submit {
 	display: block;
 	width: 100%;
-	padding: 1.2em 1.5em 1.05em;
 	font-size: 0.9rem;
 	font-weight: 600;
 	font-family: "Poppins", sans-serif;
@@ -124,25 +122,44 @@ body {
 }
 
 .input {
-	border: 0.5px solid rgba(185, 182, 211, 0.5);
+	position: relative;
+	padding-inline: 1.5em 4em;
+	height: 56px;
+	border: 1px solid hsla(246, 25%, 77%, 0.5);
+}
+
+.input:focus {
+	outline: none;
+}
+
+.error-icon {
+	position: absolute;
+	top: 28px;
+	right: 0;
+	transform: translate(-100%, -50%);
+	display: none;
 }
 
 .error-msg {
 	display: none;
+	font-size: var(--fs-s);
+	font-weight: 600;
+	font-style: italic;
 }
 
 .btn-submit {
+	margin-bottom: 0.6em;
+	padding: 1.15em 1.5em 1.1em;
 	background: var(--green);
 	font-weight: 500;
 	letter-spacing: 1.3px;
 	text-transform: uppercase;
-	border: none;
+	border: 1px solid var(--green);
 	box-shadow: inset 0 -0.3em rgba(62, 60, 73, 0.1);
-	margin-bottom: 0.6em;
 }
 
 .terms {
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 	font-size: var(--fs-s);
 	line-height: 2;
@@ -153,3 +170,78 @@ body {
 	color: var(--red);
 	font-weight: 700;
 }
+
+@media screen and (min-width: 768px) {
+	:root {
+		--fs-xl: 3.1rem;
+	}
+
+	body {
+		background-image: url("../assets/images/bg-intro-desktop.png");
+	}
+
+	.container {
+		min-height: 100vh;
+	}
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		max-width: 1130px;
+		padding: 0;
+	}
+
+	.wrapper > * {
+		flex: 1 1 50%;
+	}
+
+	/* Text Wrapper */
+	.text-wrapper {
+		padding: 0;
+		text-align: start;
+	}
+
+	.title {
+		margin-bottom: 0.6em;
+		line-height: 1.1;
+	}
+
+	/* Form */
+	.form {
+		padding: 2.5em;
+	}
+
+	.input-group {
+		line-height: 1.4;
+		margin-bottom: 1.25em;
+		text-align: end;
+	}
+
+	.input:focus {
+		border: 1px solid black;
+	}
+
+	.btn-submit {
+		cursor: pointer;
+		margin-bottom: 0.9em;
+	}
+
+	.btn-submit:hover {
+		background-color: hsla(154, 59%, 51%, 0.7);
+	}
+
+	/* In error */
+	.input-error .input {
+		border: 2px solid var(--red);
+	}
+
+	.input-error .error-icon {
+		display: initial;
+	}
+
+	.input-error .error-msg {
+		display: initial;
+		color: var(--red);
+	}
+} ;
