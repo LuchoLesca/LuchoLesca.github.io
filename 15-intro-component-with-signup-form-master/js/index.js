@@ -1,10 +1,9 @@
 $form = document.getElementById("form")
-$inputGroups = document.querySelectorAll(".input-group")
 
 const emailValidRegex =
 	/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-const correctField = (input) => {
+const validatedField = (input) => {
 	const fieldName = input.name
 	const fieldValue = input.value.trim()
 
@@ -19,9 +18,11 @@ const correctField = (input) => {
 }
 
 const validateForm = (form) => {
-	const inputs = form.querySelectorAll(".input")
+	const inputs = [...form.elements].filter(
+		(element) => element.localName === "input"
+	)
 	inputs.forEach((input) => {
-		if (!correctField(input)) {
+		if (!validatedField(input)) {
 			input.parentNode.classList.add("input-error")
 		} else {
 			input.parentNode.classList.remove("input-error")
@@ -29,7 +30,9 @@ const validateForm = (form) => {
 	})
 }
 
-$form.addEventListener("submit", (e) => {
+const handleSubmit = (e) => {
 	e.preventDefault()
 	validateForm($form)
-})
+}
+
+$form.addEventListener("submit", handleSubmit)
