@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Favicon -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon-32x32.png"
+		/>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="./css/style.css" />
+		<!-- Script -->
+		<script src="./js/index.js" defer></script>
+		<!-- Title -->
+		<title>Frontend Mentor | Pod request access landing page</title>
+	</head>
+	<body>
+		<main class="wrapper">
+			<div class="header">
+				<img src="./assets/images/logos/pod-logo.svg" alt="" class="logo" />
+			</div>
+			<div class="content">
+				<div class="text">
+					<h1 class="title"><span>Publish your podcasts</span> everywhere.</h1>
+					<h2 class="subtitle">
+						Upload your audio to Pod with a single click. We’ll then distribute
+						your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+						Casts and more!
+					</h2>
+				</div>
+				<form class="form" id="form" data-error-msg="">
+					<input
+						name="email"
+						class="form__input"
+						type="text"
+						placeholder="Email address"
+					/>
+					<button type="submit" class="form__btn">Request Access</button>
+				</form>
+				<footer class="footer">
+					<ul class="logos">
+						<li class="logo__item">
+							<img src="./assets/images/logos/spotify.svg" alt="spotify logo" />
+						</li>
+						<li class="logo__item">
+							<img
+								src="./assets/images/logos/apple-podcast.svg"
+								alt="apple podcast logo"
+							/>
+						</li>
+						<li class="logo__item">
+							<img
+								src="./assets/images/logos/google-podcasts.svg"
+								alt="google podcast logo"
+							/>
+						</li>
+						<li class="logo__item">
+							<img
+								src="./assets/images/logos/pocket-casts.svg"
+								alt="pocket casts logo"
+							/>
+						</li>
+					</ul>
+				</footer>
+			</div>
+		</main>
+	</body>
+</html>
