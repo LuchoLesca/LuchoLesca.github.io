@@ -1,0 +1,48 @@
+// AQUI EN BASE VAN SOLO SELECTORES DE ETIQUETA
+@use "./abstracts" as *;
+@use "../mixins/from" as *;
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+img {
+	max-width: 100%;
+	line-height: 0;
+}
+
+h1,
+h2,
+p,
+blockquote,
+body {
+	margin: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 4em 1.6em;
+	background: $light-grayish-blue;
+	font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.cards {
+	display: grid;
+	gap: 1.5em;
+
+	@include from($desktop) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 2;
+		max-width: 73em;
+	}
+}

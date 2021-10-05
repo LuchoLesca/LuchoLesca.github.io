@@ -1,0 +1,26 @@
+include ../blocks/user
+//- Es necesario importar user antes, ya que card lo utilizará.
+//- Otra opción sería importar user dentro de card
+include ../blocks/card
+include ../data/cardsInfo
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		//- Favicon
+		link(rel="icon", type="image/png", sizes="32x32", href="./assets/images/favicon-32x32.png")
+		//- Fonts	
+		link(rel="preconnect",	href="https://fonts.googleapis.com")
+		link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+		link(href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;1,500;1,600&display=swap", rel="stylesheet")
+		//- Stylesheet
+		link(rel="stylesheet", href="./css/style.css")
+		title Document
+	body
+		main.cards
+			each cardInfo in cardsInfo
+				+card(cardInfo.comment, cardInfo.quote, cardInfo.classModifier)
+					+user(cardInfo.header.pictureUrl, cardInfo.header.name, cardInfo.header.status, "", cardInfo.header.imgModifier)

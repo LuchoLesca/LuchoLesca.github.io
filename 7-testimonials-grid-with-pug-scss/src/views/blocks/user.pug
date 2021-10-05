@@ -1,0 +1,6 @@
+mixin user(pictureUrl, name, status, classModifier = "", imgClassModifier = "")
+    div.user
+        img.user__img(src=`./assets/images/${pictureUrl}`, alt=pictureUrl, class=`${imgClassModifier}`)
+        div.user__data
+            h1.user__name= name
+            h2.user__status= status

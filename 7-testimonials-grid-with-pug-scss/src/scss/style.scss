@@ -1,0 +1,17 @@
+// Configuración de guías de estilo
+// @use "abstracts/colors" as *;
+// @use "abstracts/fonts" as *;
+@use "./abstracts" as *;
+
+// Mixins
+@use "./mixins/from";
+
+// Base
+@use "base/base";
+
+// Blocks
+@use "blocks/card";
+@use "blocks/user";
+
+// Utilities
+@use "./utilities/text-colors";

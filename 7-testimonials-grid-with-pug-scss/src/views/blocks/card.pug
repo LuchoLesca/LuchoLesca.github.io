@@ -1,0 +1,8 @@
+mixin card(comment, quote, classModifier = "")
+    article.card(class=`${classModifier}`)
+        //- El block se utiliza para que, en el momento de llamar a este mixin, podemos identarle un bloque adentro que se ejecutará en el lugar en el que este en este código
+        //- En este caso, en index le pasamos el bloque de código de user, y llega aquí
+        //- Así nos ahorramos tener que pasar todos los parámetros a card, los que son propios de user (pictureUrl, name, status)
+        block
+        p.card__comment= comment
+        blockquote.card__quote= quote

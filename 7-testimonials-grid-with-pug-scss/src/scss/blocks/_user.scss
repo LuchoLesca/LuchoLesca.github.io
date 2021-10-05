@@ -1,0 +1,32 @@
+@use "abstracts" as *;
+
+.user {
+	display: flex;
+	align-items: center;
+	font-weight: $ft-light;
+
+	&__img {
+		width: 1.8em;
+		height: 1.8em;
+		margin-right: 1em;
+		border-radius: 50%;
+		outline: 2px solid transparent;
+
+		&--has-violet-border {
+			outline-color: $violet;
+		}
+
+		&--has-light-violet-border {
+			outline-color: $light-violet;
+		}
+	}
+
+	&__name {
+		font-size: 0.8rem;
+	}
+
+	&__status {
+		font-size: 0.7rem;
+		opacity: 0.5;
+	}
+}
