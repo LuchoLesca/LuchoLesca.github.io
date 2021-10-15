@@ -1,0 +1,13 @@
+.logos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4em;
+}
+
+.logo {
+	&__image {
+		margin: 0 auto;
+		width: 86%;
+	}
+}

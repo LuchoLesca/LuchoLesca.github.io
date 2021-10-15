@@ -1,0 +1,33 @@
+// @use "../abstracts/" as *;
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1.5em;
+	color: var(--white);
+}
+
+.btn {
+	flex: 1 1 310px;
+	display: block;
+	padding: 0.97em;
+
+	border-radius: 2em;
+
+	font-size: 1.1rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+
+	&--green {
+		background-color: var(--strong-cyan);
+		box-shadow: inset 0 -3px rgba(0, 0, 0, 0.1),
+			0 10px 20px hsl(171 66% 44% / 0.25);
+	}
+
+	&--purple {
+		background-color: var(--light-blue);
+		box-shadow: inset 0 -3px rgba(0, 0, 0, 0.1),
+			0 10px 20px hsl(233 100% 69% / 0.25);
+	}
+}

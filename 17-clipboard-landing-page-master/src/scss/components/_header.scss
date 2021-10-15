@@ -1,0 +1,17 @@
+.header {
+	padding-top: 7.5em;
+	padding-inline: 2em;
+
+	&__logo {
+		margin-bottom: 4em;
+		margin-inline: auto;
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__description {
+		margin-bottom: 3em;
+	}
+}

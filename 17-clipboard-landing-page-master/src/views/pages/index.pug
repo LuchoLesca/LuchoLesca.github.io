@@ -1,0 +1,56 @@
+include ../data/sectionsData
+include ../data/articlesData
+include ../mixins/article
+include ../mixins/section
+include ../mixins/logoLink
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Fonts
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;1,400;1,600&display=swap", rel="stylesheet")
+        //- Stylesheet
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="./assets/images/favicon-32x32.png", type="image/x-icon")
+        //- title
+        title Clipboard Landing Page
+    body
+        include ../blocks/header            
+
+        div.main-content
+            each section, idx in sectionsData
+                +section(section.title, section.description)
+                    if idx === 0
+                        div.section__details
+                            img.image(src="./assets/images/image-computer.png", alt="image-computer")
+                            section.articles
+                                each article in articlesData1
+                                    +article(article.title, article.description)
+                    else if idx === 1
+                        div.section__details
+                            img.image(src="./assets/images/image-devices.png", alt="image-computer")
+                    else if idx === 2
+                        div.section__details
+                            section.articles
+                                each article in articlesData2
+                                    +article(article.title, article.description)
+                                        img.article__image(src=`./assets/images/icons/${article.urlImage}`, alt=article.urlImage)
+                
+            section.section.logos
+                +logoLink("#", "logo-google.png")
+                +logoLink("#", "logo-ibm.png")
+                +logoLink("#", "logo-microsoft.png")
+                +logoLink("#", "logo-hp.png")
+                +logoLink("#", "logo-vector-graphics.png")
+
+
+            +section("Clipboard for iOS and Mac OS", "Available for free on the App Store. Download for Max or iOS, sync with iCloud and you're ready to start adding to your clipboard.")
+                include ../blocks/buttons
+            
+        include ../blocks/footer
+
