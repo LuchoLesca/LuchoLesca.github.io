@@ -17,11 +17,20 @@ p {
 }
 
 body {
+	width: 100%;
 	min-height: 100vh;
-	width: 100vw;
 	text-align: center;
 	background: no-repeat top / contain
 		url("../assets/images/backgrounds/bg-header-mobile.png");
+
+	@include mq(medium) {
+		background-image: url("../assets/images/backgrounds/bg-header-desktop.png");
+	}
+
+	& > *:not(.footer) {
+		width: min(1440px, 83%);
+		margin: 0 auto;
+	}
 }
 
 img {
@@ -54,4 +63,10 @@ h3 {
 [class*="description"] {
 	color: var(--gray);
 	line-height: 1.62;
+
+	@include mq(medium) {
+		margin-inline: auto;
+		max-width: 700px;
+		// padding-inline: 3em;
+	}
 }

@@ -1,24 +1,62 @@
+@use "../abstracts/breakpoints" as *;
+
 .section {
 	&__title {
 		margin-bottom: 0.6em;
 		font-size: 1.75rem;
+
+		@include mq(medium) {
+			font-size: 2.2rem;
+		}
 	}
 
 	&__description {
 		margin-bottom: 4.1em;
+
+		@include mq(medium) {
+			font-size: 1.1rem;
+		}
 	}
 
-	&__details .image {
-		margin-bottom: 3.6em;
+	&__details {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 3.5em;
+
+		@include mq(medium) {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.image-wrapper + .articles {
+			@include mq(medium) {
+				display: initial;
+				text-align: start;
+				margin-right: auto;
+				width: 350px;
+			}
+		}
+
+		@include mq(medium) {
+			.image-wrapper {
+				overflow: hidden;
+			}
+
+			.image-wrapper .image {
+				position: relative;
+				right: 2em;
+			}
+		}
 	}
 }
 
 .section:first-child {
-	margin-bottom: 11.7em;
+	margin-bottom: 11.6em;
 }
 
 .section:nth-child(2) {
-	margin-bottom: 7em;
+	margin-bottom: 7.1em;
 }
 
 .section:nth-child(3) {

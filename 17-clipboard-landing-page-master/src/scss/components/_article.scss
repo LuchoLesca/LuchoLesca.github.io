@@ -1,10 +1,25 @@
-.article {
-	margin-bottom: 3em;
+@use "../abstracts/breakpoints" as *;
 
+.articles {
+	@include mq(medium) {
+		display: flex;
+		align-items: flex-start;
+		align-items: baseline;
+		gap: 4em;
+
+		> * {
+			flex-basis: 100%;
+		}
+	}
+}
+
+.article:not(:last-child) {
+	margin-bottom: 3em;
+}
+
+.article {
 	&__image {
-		margin: 0 auto;
-		margin-top: 5.4em;
-		margin-bottom: 2.8em;
+		margin: 1.6em auto 2.5em;
 	}
 
 	&__title {

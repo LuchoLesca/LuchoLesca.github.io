@@ -1,13 +1,24 @@
+@use "../abstracts/breakpoints" as *;
+
 .logos {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	gap: 4em;
+
+	@include mq(medium) {
+		flex-direction: row;
+	}
 }
 
 .logo {
 	&__image {
 		margin: 0 auto;
 		width: 86%;
+
+		@include mq(medium) {
+			width: 100%;
+		}
 	}
 }
