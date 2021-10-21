@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Fonts
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        //- Stylesheet
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="./assets/images/favicon-32x32.png", type="image/x-icon")
+        //- title
+        title Fylo data storage component
+    body
+        main.main
+            article.article.header-fylo
+                img.logo(src="./assets/images/logo.svg", alt="logo")
+                ul.icons
+                    li.icons__item: img.icons__image(src="./assets/images/icon-document.svg", alt="icon document")
+                    li.icons__item: img.icons__image(src="./assets/images/icon-folder.svg", alt="icon folder")
+                    li.icons__item: img.icons__image(src="./assets/images/icon-upload.svg", alt="icon upload")
+
+            article.article.available-storage
+                p.description You've used
+                    span  815 GB
+                    |  of your storage
+                div.progress-bar-wrapper
+                    div.progress-bar
+                    div.progress-bar__min-max
+                        span.min 0 GB
+                        span.max 1000 GB
+                div.tooltip
+                    p.amount 185
+                    p.unit GB LEFT
+
+                
+                    
+

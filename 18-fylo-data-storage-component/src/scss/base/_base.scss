@@ -1,0 +1,54 @@
+@use "../functions/rem" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: var(--ff-primary);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	background: no-repeat center / cover url("../assets/images/bg-mobile.png"),
+		var(--very-dark-blue);
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	padding: 0;
+	margin-block: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+}
+
+.main {
+	width: 86%;
+	margin: 195px auto;
+}
+
+.article {
+	margin-bottom: rem(14px);
+	background-color: var(--dark-blue);
+	border-radius: rem(10px);
+}

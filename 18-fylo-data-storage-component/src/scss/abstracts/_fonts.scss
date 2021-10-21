@@ -1,0 +1,9 @@
+@use "../functions/rem" as *;
+
+$ff-primary: "'Raleway'", sans-serif;
+
+$font-sizes: (
+	small: rem(12px),
+	medium: rem(14px),
+	big: rem(40px),
+);

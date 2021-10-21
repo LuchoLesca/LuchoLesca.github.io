@@ -1,0 +1,26 @@
+@use "../functions/rem" as *;
+
+.header-fylo {
+	padding: 2.5em;
+	border-top-right-radius: 6em;
+
+	.logo {
+		margin-bottom: 2em;
+	}
+
+	.icons {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		&__item {
+			background-color: var(--very-dark-blue);
+			width: rem(50px);
+			height: rem(50px);
+			border-radius: rem(10px);
+
+			display: grid;
+			place-items: center;
+		}
+	}
+}

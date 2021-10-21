@@ -1,0 +1,64 @@
+@use "../functions/rem" as *;
+
+.available-storage {
+	padding: 2.1em 2em 3.3em;
+	position: relative;
+	color: var(--pale-blue);
+
+	.description {
+		margin-bottom: 1.1em;
+		text-align: center;
+		font-size: var(--fs-medium);
+
+		span {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+
+	.progress-bar-wrapper {
+		.progress-bar {
+			position: relative;
+			height: rem(20px);
+			margin: 0 auto 0.6em;
+			background-color: var(--very-dark-blue);
+			border-radius: rem(10px);
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 75%;
+				height: rem(14px);
+				left: rem(3px);
+				top: rem(3px);
+				border-radius: rem(7px);
+				background: var(--gradient);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: rem(11px);
+				aspect-ratio: 1;
+				left: calc(75% - #{rem(11px)});
+				top: rem(4px);
+				border-radius: rem(7px);
+				background: var(--pale-blue);
+			}
+		}
+		.progress-bar__min-max {
+			display: flex;
+			justify-content: space-between;
+			text-transform: uppercase;
+			font-size: var(--fs-small);
+			font-weight: 700;
+		}
+	}
+
+	.tooltip {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+	}
+}

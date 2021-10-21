@@ -1,0 +1,26 @@
+@use "../functions/rem" as *;
+
+.tooltip {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	width: rem(200px);
+	height: rem(70px);
+	border-radius: rem(10px);
+	background-color: var(--white);
+	color: var(--grayish-blue);
+	font-weight: 700;
+
+	.amount {
+		font-size: var(--fs-big);
+		color: var(--black);
+	}
+
+	.unit {
+		font-size: var(--fs-small);
+		color: var(--grayish-blue);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+}

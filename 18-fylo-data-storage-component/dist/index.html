@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <title>Fylo data storage component</title>
+  </head>
+  <body>
+    <main class="main">
+      <article class="article header-fylo"><img class="logo" src="./assets/images/logo.svg" alt="logo">
+        <ul class="icons">
+          <li class="icons__item"><img class="icons__image" src="./assets/images/icon-document.svg" alt="icon document"></li>
+          <li class="icons__item"><img class="icons__image" src="./assets/images/icon-folder.svg" alt="icon folder"></li>
+          <li class="icons__item"><img class="icons__image" src="./assets/images/icon-upload.svg" alt="icon upload"></li>
+        </ul>
+      </article>
+      <article class="article available-storage">
+        <p class="description">You've used<span> 815 GB</span> of your storage</p>
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar"></div>
+          <div class="progress-bar__min-max"><span class="min">0 GB</span><span class="max">1000 GB</span></div>
+        </div>
+        <div class="tooltip">
+          <p class="amount">185</p>
+          <p class="unit">GB LEFT</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

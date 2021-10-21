@@ -1,0 +1,14 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/fonts" as *;
+
+:root {
+	@each $color, $value in $colors {
+		--#{$color}: #{$value};
+	}
+
+	--ff-primary: #{$ff-primary};
+
+	@each $size, $value in $font-sizes {
+		--fs-#{$size}: #{$value};
+	}
+}
