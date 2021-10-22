@@ -66,10 +66,6 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: inherit;
-}
-
 h1,
 h2,
 h3 {
@@ -340,6 +336,11 @@ h3 {
     width: 150px;
   }
 }
+@media screen and (min-width: 768px) {
+  .footer .pages__link:hover {
+    color: var(--strong-cyan);
+  }
+}
 .footer .socials {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,6 +352,10 @@ h3 {
       flex-wrap: wrap;
   gap: 2.5em;
   padding-block: 0.5em;
+}
+.footer .socials__link:hover {
+  -webkit-filter: invert(0.5) sepia(1) hue-rotate(100deg) saturate(4) brightness(0.9);
+          filter: invert(0.5) sepia(1) hue-rotate(100deg) saturate(4) brightness(0.9);
 }
 
 .header {

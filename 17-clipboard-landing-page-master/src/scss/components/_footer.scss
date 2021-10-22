@@ -7,7 +7,7 @@
 	gap: 2.7em;
 	padding-block: 3.25em 2.7em;
 	background-color: var(--light-gray);
-	
+
 	@include mq(medium) {
 		flex-direction: row;
 		justify-content: space-evenly;
@@ -41,6 +41,12 @@
 				width: 150px;
 			}
 		}
+
+		&__link:hover {
+			@include mq(medium) {
+				color: var(--strong-cyan);
+			}
+		}
 	}
 
 	.socials {
@@ -49,5 +55,10 @@
 		flex-wrap: wrap;
 		gap: 2.5em;
 		padding-block: 0.5em;
+
+		&__link:hover {
+			filter: invert(0.5) sepia(1) hue-rotate(100deg) saturate(4)
+				brightness(0.9);
+		}
 	}
 }
