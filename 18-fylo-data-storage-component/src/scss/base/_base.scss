@@ -10,9 +10,6 @@
 
 body,
 h1,
-h2,
-h3,
-h4,
 p {
 	margin: 0;
 }
@@ -28,6 +25,8 @@ body {
 
 	@include mq(desktop) {
 		background-image: url("../assets/images/bg-desktop.png");
+		background-size: contain;
+		background-position: bottom;
 	}
 }
 

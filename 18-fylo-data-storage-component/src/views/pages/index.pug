@@ -1,3 +1,6 @@
+include ../mixins/listItem
+include ../mixins/tooltip
+
 doctype html
 html(lang="en")
     head
@@ -18,9 +21,9 @@ html(lang="en")
             article.article.header-fylo
                 img.logo(src="./assets/images/logo.svg", alt="logo")
                 ul.icons
-                    li.icons__item: img.icons__image(src="./assets/images/icon-document.svg", alt="icon document")
-                    li.icons__item: img.icons__image(src="./assets/images/icon-folder.svg", alt="icon folder")
-                    li.icons__item: img.icons__image(src="./assets/images/icon-upload.svg", alt="icon upload")
+                    +listItem("./assets/images/icon-document.svg", "icon document")
+                    +listItem("./assets/images/icon-folder.svg", "icon folder")
+                    +listItem("./assets/images/icon-upload.svg", "icon upload")
 
             article.article.available-storage
                 p.description You've used
@@ -31,9 +34,7 @@ html(lang="en")
                     div.progress-bar__min-max
                         span.min 0 GB
                         span.max 1000 GB
-                div.tooltip
-                    p.amount 185
-                    p.unit GB LEFT
+                +tooltip(185, "GB left")
 
                 
                     
