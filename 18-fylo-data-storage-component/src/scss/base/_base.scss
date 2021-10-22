@@ -1,4 +1,5 @@
 @use "../functions/rem" as *;
+@use "../abstracts/breakpoints" as *;
 
 *,
 *::before,
@@ -17,10 +18,17 @@ p {
 }
 
 body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	min-height: 100vh;
 	background: no-repeat center / cover url("../assets/images/bg-mobile.png"),
 		var(--very-dark-blue);
+
+	@include mq(desktop) {
+		background-image: url("../assets/images/bg-desktop.png");
+	}
 }
 
 img {
@@ -40,15 +48,4 @@ a {
 
 a:visited {
 	color: inherit;
-}
-
-.main {
-	width: 86%;
-	margin: 195px auto;
-}
-
-.article {
-	margin-bottom: rem(14px);
-	background-color: var(--dark-blue);
-	border-radius: rem(10px);
 }

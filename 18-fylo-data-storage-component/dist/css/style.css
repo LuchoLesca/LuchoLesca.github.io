@@ -30,9 +30,23 @@ p {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   min-height: 100vh;
   background: no-repeat center/cover url("../assets/images/bg-mobile.png"), var(--very-dark-blue);
+}
+@media screen and (min-width: 60rem) {
+  body {
+    background-image: url("../assets/images/bg-desktop.png");
+  }
 }
 
 img {
@@ -52,17 +66,6 @@ a {
 
 a:visited {
   color: inherit;
-}
-
-.main {
-  width: 86%;
-  margin: 195px auto;
-}
-
-.article {
-  margin-bottom: 0.875rem;
-  background-color: var(--dark-blue);
-  border-radius: 0.625rem;
 }
 
 .tooltip {
@@ -125,10 +128,20 @@ a:visited {
   position: relative;
   color: var(--pale-blue);
 }
+@media screen and (min-width: 60rem) {
+  .available-storage {
+    padding: 2.5em;
+  }
+}
 .available-storage .description {
   margin-bottom: 1.1em;
   text-align: center;
   font-size: var(--fs-medium);
+}
+@media screen and (min-width: 60rem) {
+  .available-storage .description {
+    text-align: start;
+  }
 }
 .available-storage .description span {
   text-transform: uppercase;
@@ -178,4 +191,48 @@ a:visited {
   left: 50%;
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
+}
+@media screen and (min-width: 60rem) {
+  .available-storage .tooltip {
+    -webkit-transform: unset;
+            transform: unset;
+    inset: initial;
+    right: 2.5em;
+    top: -3em;
+  }
+  .available-storage .tooltip::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -35%;
+    width: 0;
+    height: 0;
+    border-top: 35px solid var(--white);
+    border-left: 35px solid transparent;
+  }
+}
+
+.main {
+  display: -ms-grid;
+  display: grid;
+  gap: 0.875rem;
+  width: min(86%, 920px);
+}
+@media screen and (min-width: 60rem) {
+  .main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    -ms-grid-columns: 350px 1.875rem 540px;
+    grid-template-columns: 350px 540px;
+    gap: 1.875rem;
+  }
+}
+
+.article {
+  background-color: var(--dark-blue);
+  border-radius: 0.625rem;
 }

@@ -1,14 +1,23 @@
 @use "../functions/rem" as *;
+@use "../abstracts/breakpoints" as *;
 
 .available-storage {
 	padding: 2.1em 2em 3.3em;
 	position: relative;
 	color: var(--pale-blue);
 
+	@include mq(desktop) {
+		padding: 2.5em;
+	}
+
 	.description {
 		margin-bottom: 1.1em;
 		text-align: center;
 		font-size: var(--fs-medium);
+
+		@include mq(desktop) {
+			text-align: start;
+		}
 
 		span {
 			text-transform: uppercase;
@@ -60,5 +69,23 @@
 		bottom: 0;
 		left: 50%;
 		transform: translate(-50%, 50%);
+
+		@include mq(desktop) {
+			transform: unset;
+			inset: initial;
+			right: 2.5em;
+			top: -3em;
+
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				bottom: -35%;
+				width: 0;
+				height: 0;
+				border-top: 35px solid var(--white);
+				border-left: 35px solid transparent;
+			}
+		}
 	}
 }

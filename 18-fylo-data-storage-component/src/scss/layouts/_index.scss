@@ -1,0 +1,20 @@
+@use "../functions/rem" as *;
+@use "../abstracts/breakpoints" as *;
+
+.main {
+	display: grid;
+	gap: rem(14px);
+	width: min(86%, 920px);
+
+	@include mq(desktop) {
+		justify-content: center;
+		align-items: end;
+		grid-template-columns: 350px 540px;
+		gap: rem(30px);
+	}
+}
+
+.article {
+	background-color: var(--dark-blue);
+	border-radius: rem(10px);
+}
