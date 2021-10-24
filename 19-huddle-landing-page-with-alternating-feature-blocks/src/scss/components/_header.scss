@@ -1,0 +1,57 @@
+@use "../functions/rem" as *;
+
+.header {
+	padding-top: 1.5em;
+	padding-bottom: 2.1em;
+
+	background: no-repeat top / contain url("../assets/images/bg-hero-mobile.svg"),
+		var(--cyan);
+
+	.btn {
+		font-family: var(--ff-secundary);
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: 1em;
+		margin-bottom: 5.1em;
+
+		.logo {
+			width: 100px;
+		}
+
+		.btn {
+			padding: 0.3em 2em;
+			border-radius: 2em;
+			font-size: var(--fs-small);
+		}
+	}
+
+	&__banner {
+		padding-inline: 2.3em;
+	}
+	
+	&__content {
+		margin-bottom: 4em;
+
+		.title {
+			margin-bottom: 0.9em;
+			font-family: var(--ff-secundary);
+			font-size: var(--fs-big);
+		}
+
+		.paragraph {
+			margin-bottom: 2.45em;
+			font-size: var(--fs-medium);
+			line-height: 1.5;
+		}
+
+		.btn {
+			padding: 1.1em 6em;
+			font-size: var(--fs-small);
+			border-radius: 2em;
+		}
+	}
+}

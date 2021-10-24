@@ -1,0 +1,29 @@
+.article {
+	padding-top: 3.5em;
+	padding-bottom: 2em;
+	border-radius: 1em;
+	height: 490px;
+
+	&__image {
+		margin-bottom: 3.5em;
+		padding-inline: 3.1em;
+	}
+
+	.title {
+		margin-bottom: 0.75em;
+		font-family: var(--ff-secundary);
+		font-size: 1.25rem;
+		font-size: 1.25rem;
+	}
+
+	.paragraph {
+		padding-inline: 3.2em;
+		color: var(--gray);
+		font-size: 0.845rem;
+		line-height: 1.55;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2.5em;
+	}
+}

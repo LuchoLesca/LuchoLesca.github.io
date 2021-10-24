@@ -1,0 +1,18 @@
+@use "../functions/rem" as *;
+
+$fonts: (
+	ff-primary: (
+		"'Open Sans'",
+		sans-serif,
+	),
+	ff-secundary: (
+		"'Poppins'",
+		sans-serif,
+	),
+);
+
+$fontSizes: (
+	small: rem(11px),
+	medium: rem(16px),
+	big: rem(24px),
+);
