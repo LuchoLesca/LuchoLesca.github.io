@@ -1,57 +1,89 @@
 @use "../functions/rem" as *;
+@use "../functions/clampBuilder" as *;
+@use "../abstracts/breakpoints" as *;
 
 .header {
-	padding-top: 1.5em;
-	padding-bottom: 2.1em;
-
+	padding: 1.5em 1em 2.1em;
 	background: no-repeat top / contain url("../assets/images/bg-hero-mobile.svg"),
 		var(--cyan);
 
+	@include mq(medium) {
+		padding: 3em 5em 4em;
+		background-image: url("../assets/images/bg-hero-desktop.svg");
+	}
+
 	.btn {
 		font-family: var(--ff-secundary);
+		font-size: clampBuilder(375, 1440, 0.75, 0.9);
 	}
 
 	&__top {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-inline: 1em;
 		margin-bottom: 5.1em;
 
 		.logo {
-			width: 100px;
+			width: min(200px, 30%);
 		}
 
 		.btn {
 			padding: 0.3em 2em;
 			border-radius: 2em;
-			font-size: var(--fs-small);
+
+			@include mq(medium) {
+				padding: 1em 5em;
+
+				&:hover {
+					color: var(--gray);
+				}
+			}
 		}
 	}
 
 	&__banner {
-		padding-inline: 2.3em;
+		padding-inline: 1.3em;
+
+		@include mq(medium) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0;
+
+			> * {
+				width: 100%;
+			}
+		}
 	}
-	
+
 	&__content {
 		margin-bottom: 4em;
+
+		@include mq(medium) {
+			> * {
+				width: 78%;
+			}
+		}
 
 		.title {
 			margin-bottom: 0.9em;
 			font-family: var(--ff-secundary);
-			font-size: var(--fs-big);
+			font-size: clampBuilder(375, 1440, 1.5, 2.5);
 		}
 
 		.paragraph {
 			margin-bottom: 2.45em;
-			font-size: var(--fs-medium);
+			font-size: clampBuilder(375, 1440, 1, 1.1);
 			line-height: 1.5;
 		}
 
 		.btn {
-			padding: 1.1em 6em;
-			font-size: var(--fs-small);
+			padding: 1em 5em;
 			border-radius: 2em;
+
+			&:hover {
+				background-color: var(--light-pink);
+			}
 		}
 	}
 }

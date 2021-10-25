@@ -2,7 +2,7 @@
 
 mixin article(imgSrc="", title="", paragraph="", classModifier="")
     article.article(class= `${classModifier} shadow-gray`)
-        img.article__image(src= `${imgSrcBase}${imgSrc}`, alt= imgSrc)
         div.article__info
             h2.title= title
             p.paragraph= paragraph
+        img.article__image(src= `${imgSrcBase}${imgSrc}`, alt= imgSrc)

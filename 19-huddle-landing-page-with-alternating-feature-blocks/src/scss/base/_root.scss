@@ -9,10 +9,4 @@
 	@each $font, $value in $fonts {
 		--#{$font}: #{$value};
 	}
-
-	@each $font, $size in $fontSizes {
-		--fs-#{$font}: #{$size};
-	}
 }
-
-
