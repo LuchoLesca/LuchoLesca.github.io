@@ -1,13 +1,14 @@
 @use "../functions/rem" as *;
+@use "../abstracts/breakpoints" as *;
 
 .card {
 	position: relative;
-	width: 230px;
 	width: 15.4em;
-	margin: 0 auto 4.6em;
+	margin: 0 auto;
 	background-color: var(--clr-secondary-light-grayish-violet);
 	border-radius: 2em;
 	border: 10px solid var(--clr-secondary-white);
+	box-shadow: 0 25px 50px #3e275355;
 	overflow: hidden;
 
 	&::after {
@@ -18,9 +19,8 @@
 		top: 0;
 		left: 50%;
 		background-color: var(--clr-secondary-white);
+		border-radius: 0 0 rem(14px) rem(14px);
 		transform: translateX(-50%);
-		border-bottom-left-radius: rem(14px);
-		border-bottom-right-radius: rem(14px);
 	}
 
 	&__header {

@@ -1,8 +1,14 @@
 @use "../functions/rem" as *;
+@use "../abstracts/breakpoints" as *;
 
 .principal-text {
 	padding-inline: 2em;
 	text-align: center;
+
+	@include mq(medium) {
+		padding-inline: 0;
+		text-align: start;
+	}
 
 	.principal-title {
 		margin-bottom: 0.57em;
