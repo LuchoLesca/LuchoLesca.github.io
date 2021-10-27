@@ -14,36 +14,35 @@
     <main class="main">
       <article class="card">
         <div class="card__header">
-          <div class="back"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg></div>
+          <div class="header__back"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg></div>
                 <div class="user"><img class="user__avatar" src="./assets/images/avatar.jpg" alt="avatar">
                   <div class="user__info">
                     <p class="user__name">Samuel Green</p>
                     <p class="user__status">Available to Walk</p>
                   </div>
                 </div>
-          <div class="menu"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical" class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><path fill="currentColor" d="M128 64c0-35.39-28.62-64-64-64S0 28.61 0 64s28.62 64 64 64S128 99.39 128 64zM128 256c0-35.39-28.62-64-64-64S0 220.6 0 256s28.62 64 64 64S128 291.4 128 256zM128 448c0-35.39-28.62-64-64-64s-64 28.61-64 64s28.62 64 64 64S128 483.4 128 448z"></path></svg></div>
+          <div class="header__menu"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical" class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><path fill="currentColor" d="M128 64c0-35.39-28.62-64-64-64S0 28.61 0 64s28.62 64 64 64S128 99.39 128 64zM128 256c0-35.39-28.62-64-64-64S0 220.6 0 256s28.62 64 64 64S128 291.4 128 256zM128 448c0-35.39-28.62-64-64-64s-64 28.61-64 64s28.62 64 64 64S128 483.4 128 448z"></path></svg></div>
         </div>
         <div class="card__body">
           <ul class="messages">
-            <li class="message-group message-group--left">
-              <p class="message">That sounds great. I'd be happy to discuss more.</p>
-              <p class="message">Could you send over some pictures of your dog, please?</p>
+            <li class="message-group">
+              <p class="message message--left">That sounds great. I'd be happy to discuss more.</p>
+              <p class="message message--left">Could you send over some pictures of your dog, please?</p>
             </li>
-            <li class="message-group message-group--right">
-              <div class="message message--image-group"><img src="./assets/images/dog-image-1.jpg" alt="dog image 1" style="width: 40px; border-radius:10px;"><img src="./assets/images/dog-image-2.jpg" alt="dog image 2" style="width: 40px; border-radius:10px;"><img src="./assets/images/dog-image-3.jpg" alt="dog image 3" style="width: 40px; border-radius:10px;"></div>
-              <p class="message">Here are a few pictures. She's a happy girl!</p>
-              <p class="message">Can you make it?</p>
+            <li class="message-group">
+              <div class="message message--right message--image-group"><img src="./assets/images/dog-image-1.jpg" alt="dog image 1" style="width: 40px; border-radius:10px;"><img src="./assets/images/dog-image-2.jpg" alt="dog image 2" style="width: 40px; border-radius:10px;"><img src="./assets/images/dog-image-3.jpg" alt="dog image 3" style="width: 40px; border-radius:10px;"></div>
+              <p class="message message--right">Here are a few pictures. She's a happy girl!</p>
+              <p class="message message--right">Can you make it?</p>
             </li>
-            <li class="message-group message-group--left">
-              <p class="message">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
-              <div class="message promotion"><span class="time">30 minutes walk</span><span class="price">$29</span></div>
-              <div class="message promotion"><span class="time">1 hour walk</span><span class="price">$49</span></div>
+            <li class="message-group">
+              <p class="message message--left">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+                    <div class="message--promotion message message--left"><span class="time">30 minutes walk</span><span class="price">$29</span></div>
+                    <div class="message--promotion message message--left"><span class="time">1 hour walk</span><span class="price">$49</span></div>
             </li>
           </ul>
           <div class="field-group">
-            <input type="text" placeholder="Type a message...">
-            <button>
-               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg></button>
+            <input class="input-text" type="text" placeholder="Type a message...">
+            <button class="btn-send"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg></button>
           </div>
         </div>
       </article>

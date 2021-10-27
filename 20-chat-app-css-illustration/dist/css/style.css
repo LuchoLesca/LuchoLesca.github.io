@@ -178,6 +178,7 @@ a {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
+
 .card__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,21 +193,26 @@ a {
   color: var(--clr-secondary-white);
   border-radius: 0.375rem;
 }
-.card__header .back {
+
+.header__back {
   width: 0.4375rem;
 }
-.card__header .menu {
+
+.header__menu {
   width: 0.1875rem;
   margin-left: auto;
 }
+
 .card__body {
   padding: 0.68em;
 }
-.card__body .message-group {
+
+.message-group {
   position: relative;
   margin-bottom: 1em;
 }
-.card__body .message-group .message {
+
+.message {
   position: relative;
   max-width: 66.5%;
   width: -webkit-max-content;
@@ -217,22 +223,32 @@ a {
   line-height: 1.4;
   border-radius: 10px;
 }
-.card__body .message-group .message:not(:last-child) {
+.message:not(:last-child) {
   margin-bottom: 1em;
 }
-.card__body .message-group--left .message {
+.message--left {
   margin-right: auto;
   background-color: rgba(224, 179, 255, 0.2);
   color: var(--clr-primary-moderate-violet);
   border-bottom-left-radius: 4px;
 }
-.card__body .message-group--right .message {
+.message--right {
   margin-left: auto;
   background-color: var(--clr-secondary-white);
   color: var(--clr-primary-desaturated-dark-violet);
   border-bottom-right-radius: 2px;
 }
-.card__body .message-group .promotion {
+.message--image-group {
+  padding: 0;
+  background-color: transparent;
+}
+.message--image-group img {
+  display: inline-block;
+}
+.message--image-group img:not(:last-child) {
+  margin-right: 1em;
+}
+.message--promotion {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -246,64 +262,55 @@ a {
   background: -webkit-gradient(linear, left top, right top, from(var(--clr-gradient-light-magenta)), to(var(--clr-gradient-light-violet)));
   background: linear-gradient(to right, var(--clr-gradient-light-magenta), var(--clr-gradient-light-violet));
 }
-.card__body .message-group .promotion::before {
+.message--promotion::before {
   content: "";
   width: 12px;
   height: 12px;
   border-radius: 50%;
   border: 1px solid var(--clr-secondary-very-light-magenta);
 }
-.card__body .message-group .promotion .price {
+.message--promotion .price {
   margin-left: auto;
   font-size: 0.8rem;
   font-weight: 700;
   padding-right: 0.5em;
 }
-.card__body .message-group .message--image-group {
-  padding: 0;
-  background-color: transparent;
-}
-.card__body .message-group .message--image-group img {
-  display: inline-block;
-}
-.card__body .message-group .message--image-group img:not(:last-child) {
-  margin-right: 1em;
-}
-.card__body .field-group {
+
+.field-group {
   position: relative;
 }
-.card__body .field-group input {
+.field-group .input-text {
   width: 100%;
   padding: 0.8em 3.5em 0.8em 1.5em;
   border: none;
   border-radius: 5em;
 }
-.card__body .field-group input::-webkit-input-placeholder {
+.field-group .input-text::-webkit-input-placeholder {
   color: var(--clr-primary-grayish-blue);
   font-size: 0.6rem;
   font-weight: 500;
 }
-.card__body .field-group input::-moz-placeholder {
+.field-group .input-text::-moz-placeholder {
   color: var(--clr-primary-grayish-blue);
   font-size: 0.6rem;
   font-weight: 500;
 }
-.card__body .field-group input:-ms-input-placeholder {
+.field-group .input-text:-ms-input-placeholder {
   color: var(--clr-primary-grayish-blue);
   font-size: 0.6rem;
   font-weight: 500;
 }
-.card__body .field-group input::-ms-input-placeholder {
+.field-group .input-text::-ms-input-placeholder {
   color: var(--clr-primary-grayish-blue);
   font-size: 0.6rem;
   font-weight: 500;
 }
-.card__body .field-group input::placeholder {
+.field-group .input-text::placeholder {
   color: var(--clr-primary-grayish-blue);
   font-size: 0.6rem;
   font-weight: 500;
 }
-.card__body .field-group button {
+.field-group .btn-send {
   position: absolute;
   right: 5px;
   top: 5px;
@@ -318,7 +325,7 @@ a {
   border-radius: 50%;
   border: none;
 }
-.card__body .field-group button svg {
+.field-group .btn-send svg {
   width: 50%;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
