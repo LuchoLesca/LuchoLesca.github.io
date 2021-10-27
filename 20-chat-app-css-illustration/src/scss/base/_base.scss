@@ -1,0 +1,76 @@
+@use "../functions/rem" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: "Rubik", sans-serif;
+}
+
+body,
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background-color: var(--clr-secondary-light-grayish-violet);
+
+	overflow: hidden;
+
+	&::before,
+	&::after {
+		--background: linear-gradient(
+			to bottom,
+			var(--clr-gradient-light-magenta),
+			30%,
+			var(--clr-gradient-light-violet)
+		);
+		--border-radius: 0 0 250px 0;
+
+		content: "";
+		position: absolute;
+		width: min(250px, 50%);
+		height: 500px;
+		z-index: -1;
+		background: var(--background);
+		border-radius: var(--border-radius);
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+	}
+
+	&::after {
+		--background: hsl(276, 100%, 90%, 0.11);
+		--border-radius: 250px 0 0 0;
+
+		bottom: 0;
+		right: 0;
+	}
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+main {
+	padding-block: rem(64px);
+}
+
+ul {
+	padding: 0;
+	margin-block: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

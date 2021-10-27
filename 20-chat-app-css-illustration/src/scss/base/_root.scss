@@ -1,0 +1,10 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/fonts" as *;
+
+:root {
+	@each $type, $name in $colors {
+		@each $color, $value in $name {
+			--clr-#{$type}-#{$color}: #{$value};
+		}
+	}
+}

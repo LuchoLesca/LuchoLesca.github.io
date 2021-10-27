@@ -1,0 +1,35 @@
+include ../mixins/user
+
+article.card
+    .card__header
+        .back
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg>
+        +user("Samuel Green", "Available to Walk", "./assets/images/avatar.jpg")
+        .menu
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical" class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><path fill="currentColor" d="M128 64c0-35.39-28.62-64-64-64S0 28.61 0 64s28.62 64 64 64S128 99.39 128 64zM128 256c0-35.39-28.62-64-64-64S0 220.6 0 256s28.62 64 64 64S128 291.4 128 256zM128 448c0-35.39-28.62-64-64-64s-64 28.61-64 64s28.62 64 64 64S128 483.4 128 448z"></path></svg>
+    .card__body
+        ul.messages
+            li.message-group.message-group--left
+                p.message That sounds great. I'd be happy to discuss more.
+                p.message Could you send over some pictures of your dog, please?
+
+            li.message-group.message-group--right
+                .message.message--image-group
+                    img(src="./assets/images/dog-image-1.jpg", alt="dog image 1" style="width: 40px; border-radius:10px;")
+                    img(src="./assets/images/dog-image-2.jpg", alt="dog image 2" style="width: 40px; border-radius:10px;")
+                    img(src="./assets/images/dog-image-3.jpg", alt="dog image 3" style="width: 40px; border-radius:10px;")
+                p.message Here are a few pictures. She's a happy girl!
+                p.message Can you make it?
+
+            li.message-group.message-group--left
+                p.message She looks so happy! The time we discussed works. How long shall I take her out for?
+                div.message.promotion
+                    span.time 30 minutes walk
+                    span.price $29
+                div.message.promotion
+                    span.time 1 hour walk
+                    span.price $49
+        .field-group
+            input(type="text" placeholder="Type a message...")
+            button 
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg>

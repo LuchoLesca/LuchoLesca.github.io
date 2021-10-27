@@ -1,0 +1,18 @@
+@use "../functions/rem" as *;
+
+.principal-text {
+	padding-inline: 2em;
+	text-align: center;
+
+	.principal-title {
+		margin-bottom: 0.57em;
+		color: var(--clr-primary-very-dark-desaturated-violet);
+		font-size: rem(40px);
+		font-weight: 500;
+	}
+
+	.principal-paragraph {
+		color: var(--clr-primary-dark-gayish-violet);
+		line-height: 1.76;
+	}
+}

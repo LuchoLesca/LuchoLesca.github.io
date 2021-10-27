@@ -1,0 +1,6 @@
+mixin user(name, status, imgSrc="", classModifier="")
+    .user
+        img.user__avatar(src= imgSrc, alt="avatar")
+        .user__info
+            p.user__name= name
+            p.user__status= status

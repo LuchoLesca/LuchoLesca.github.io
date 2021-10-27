@@ -1,0 +1,22 @@
+.user {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+
+	&__avatar {
+		width: 25px;
+		border: 1px solid var(--clr-secondary-white);
+		border-radius: 50%;
+	}
+
+	&__name {
+		margin-bottom: 2px;
+		font-size: 0.7rem;
+		font-weight: 500;
+	}
+
+	&__status {
+		color: var(--clr-primary-pale-violet);
+		font-size: 0.5rem;
+	}
+}

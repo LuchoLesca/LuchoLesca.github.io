@@ -1,0 +1,4 @@
+@use "../abstracts/colors" as *;
+
+@each $color, $value in $colors {
+}
