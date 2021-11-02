@@ -1,0 +1,13 @@
+$breakpoints: (
+	mobile: 375px,
+	tablet: 768px,
+	desktop: 1110px,
+);
+
+@mixin mq($key) {
+	$size: map-get($breakpoints, $key);
+
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}

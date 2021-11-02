@@ -1,0 +1,16 @@
+@use "../functions/rem" as *;
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+.tag {
+	padding: 0.72em 0.58em 0.58em;
+	font-size: rem(13.3px);
+	background-color: var(--clr-neutral-light-cyan-2);
+	color: var(--clr-primary-dark-cyan);
+	font-weight: 700;
+	border-radius: 4px;
+}

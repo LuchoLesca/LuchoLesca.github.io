@@ -1,0 +1,27 @@
+@use "sass:math";
+
+// Width in px. FontSize in rem
+@function clampBuilder(
+	$minFontSize: 1,
+	$maxFontSize: 1,
+	$pixelsPerRem: 16,
+	$minWidthPx: 375,
+	$maxWidthPx: 1440
+) {
+	$minWidth: math.div($minWidthPx, $pixelsPerRem);
+	$maxWidth: math.div($maxWidthPx, $pixelsPerRem);
+
+	$fontSizeDiff: $maxFontSize - $minFontSize;
+	$widthDiff: $maxWidth - $minWidth;
+
+	$slope: math.div($fontSizeDiff, $widthDiff);
+	$yAxisIntersection: (-$minWidth * $slope) + $minFontSize;
+
+	$clampProperty: clamp(
+		#{$minFontSize}rem,
+		#{$yAxisIntersection}rem + #{$slope * 100}vw,
+		#{$maxFontSize}rem
+	);
+
+	@return #{$clampProperty};
+}

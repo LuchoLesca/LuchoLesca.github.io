@@ -1,0 +1,23 @@
+.tag--with-close {
+	display: flex;
+	border-radius: 4px;
+	overflow: hidden;
+
+	.tag {
+		border-radius: unset;
+	}
+
+	&::after {
+		content: "";
+		background: no-repeat center url("../assets/images/xmark-solid.svg"),
+			var(--clr-primary-dark-cyan);
+		background-size: 42%;
+		width: 32px;
+	}
+	&:hover {
+		cursor: pointer;
+		&::after {
+			background-color: var(--clr-neutral-very-dark-cyan);
+		}
+	}
+}

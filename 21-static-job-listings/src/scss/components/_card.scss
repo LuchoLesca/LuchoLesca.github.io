@@ -1,0 +1,139 @@
+@use "../functions/rem" as *;
+@use "../functions/clampBuilder" as *;
+@use "../abstracts/breakpoints" as *;
+
+.card {
+	position: relative;
+	padding: 2.05em 1.2em 1.45em;
+	background-color: var(--clr-primary-white, white);
+	border-radius: 5px;
+	box-shadow: 0 8px 8px hsl(180 29% 50% / 0.3);
+
+	@include mq(tablet) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 3em;
+		padding: 2em rem(40px);
+	}
+
+	& + & {
+		margin-top: rem(40px);
+
+		@include mq(desktop) {
+			margin-top: rem(25px);
+		}
+	}
+
+	&--featured {
+		border-left: 5px solid var(--clr-primary-dark-cyan);
+	}
+
+	.card__principal-info {
+		padding-bottom: 1.3em;
+		border-bottom: 1px solid var(--clr-neutral-dark-cyan);
+
+		@include mq(tablet) {
+			display: flex;
+			align-items: center;
+			gap: 2em;
+			border-bottom: none;
+			flex-shrink: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		width: 50px;
+		top: 0;
+		transform: translateY(-50%);
+
+		@include mq(tablet) {
+			position: unset;
+			transform: unset;
+			width: 90px;
+		}
+	}
+
+	.company {
+		display: inline-block;
+		margin-right: 1.5em;
+		color: var(--clr-primary-dark-cyan);
+		font-size: clampBuilder(0.8, 0.9);
+	}
+
+	.label {
+		&:not(:last-child) {
+			margin-right: 0.7em;
+		}
+
+		padding-block: rem(8px) rem(4px);
+		padding-inline: rem(8px);
+		font-size: 0.7rem;
+		font-weight: 700;
+		color: var(--clr-primary-white);
+		text-transform: uppercase;
+		border-radius: 16px;
+
+		&.new {
+			background-color: var(--clr-primary-dark-cyan);
+		}
+
+		&.featured {
+			background-color: var(--clr-neutral-very-dark-cyan);
+		}
+	}
+
+	.position {
+		font-size: clampBuilder(0.95, 1.1);
+		color: var(--clr-neutral-very-dark-cyan);
+
+		&:hover {
+			cursor: pointer;
+			color: var(--clr-primary-dark-cyan);
+		}
+
+		@include mq(desktop) {
+			margin-block: 0.7em;
+		}
+	}
+
+	.details {
+		color: var(--clr-neutral-dark-cyan);
+		font-size: clampBuilder(0.82, 0.9);
+
+		&__item {
+			position: relative;
+			display: inline;
+
+			&:not(:last-child) {
+				&::after {
+					content: "\00B7";
+					font-size: 1.2rem;
+					line-height: 0;
+					font-weight: 700;
+					margin-inline: 0.5em;
+				}
+			}
+		}
+	}
+
+	.tags {
+		padding-top: 1em;
+
+		.tag:hover {
+			cursor: pointer;
+			color: var(--clr-primary-white, white);
+			background-color: var(--clr-primary-dark-cyan);
+		}
+
+		@include mq(tablet) {
+			padding-top: 0;
+		}
+	}
+
+	&--hide {
+		display: none;
+	}
+}
