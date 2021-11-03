@@ -1,0 +1,50 @@
+@use "../functions/rem" as *;
+
+.aside {
+	position: absolute;
+	padding: 2.5em 1.8em;
+	bottom: 0;
+	left: 50%;
+	width: 90%;
+	background-color: var(--clr-primary-dark-100);
+	border-radius: 0.7em;
+	transform: translate(-50%, 50%);
+	box-shadow: 5px 5px 10px var(--clr-primary-dark-300);
+
+	.title {
+		font-family: var(--ff-secundary);
+		font-size: rem(18px);
+		margin-bottom: 1em;
+	}
+
+	.description {
+		font-size: rem(13.8px);
+		line-height: 1.5;
+		margin-bottom: 2.4em;
+	}
+
+	.form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.6em;
+
+		.input-email,
+		.btn {
+			width: 100%;
+		}
+
+		.input-email {
+			border-style: none;
+			display: inline-block;
+			padding-block: 1.1em;
+			font-size: rem(13.5px);
+			border-radius: 2em;
+			padding-inline: 2em;
+
+			&::placeholder {
+				font-size: 0.65rem;
+				color: var(--clr-primary-dark-100);
+			}
+		}
+	}
+}

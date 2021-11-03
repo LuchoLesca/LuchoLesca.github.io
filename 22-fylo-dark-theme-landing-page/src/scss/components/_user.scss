@@ -1,0 +1,26 @@
+@use "../functions/rem" as *;
+
+.user {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.7em;
+
+	.image {
+		height: 25px;
+		width: 25px;
+		border-radius: 50%;
+	}
+
+	&__info {
+		letter-spacing: .5px;
+		.name {
+			font-size: rem(10.4px);
+		}
+
+		.position {
+			font-size: rem(7px);
+			font-weight: 400;
+		}
+	}
+}

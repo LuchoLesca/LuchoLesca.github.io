@@ -1,0 +1,44 @@
+@use "../functions/rem" as *;
+
+.more-info {
+	margin-bottom: 11.5em;
+	font-size: rem(15px);
+	text-align: start;
+
+	.image {
+		width: 98%;
+		margin-bottom: 3.35em;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.1em;
+	}
+
+	.title {
+		font-family: var(--ff-secundary);
+	}
+
+	.text {
+		font-size: rem(14px);
+		line-height: 1.5;
+	}
+
+	.link {
+		display: flex;
+		gap: 0.5em;
+		font-size: rem(12px);
+		color: var(--clr-accent-cyan);
+		text-decoration: underline;
+		text-underline-offset: 10px;
+
+		&::after {
+			content: url("../assets/images/icon-arrow.svg");
+		}
+
+		&:hover {
+			color: var(--clr-neutral-white);
+		}
+	}
+}

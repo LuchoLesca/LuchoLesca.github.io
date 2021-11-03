@@ -1,0 +1,28 @@
+@use "../functions/rem" as *;
+
+.features {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5.6em;
+	padding-bottom: 10em;
+	line-height: 1.5;
+}
+
+.feature {
+	font-family: var(--ff-secundary);
+
+	.image {
+		max-height: 61px;
+		max-width: 65px;
+		margin-bottom: 2.05em;
+		margin-inline: auto;
+	}
+
+	.title {
+		margin-bottom: 0.4em;
+	}
+
+	.description {
+		font-size: rem(14px);
+	}
+}

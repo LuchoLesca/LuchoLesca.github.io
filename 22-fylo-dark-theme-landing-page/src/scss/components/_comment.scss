@@ -1,0 +1,36 @@
+@use "../functions/rem" as *;
+
+.comments {
+	line-height: 1.8;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1.4em;
+
+	width: 90%;
+	margin-inline: auto;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: -20px;
+		z-index: -1;
+		width: 25px;
+		height: 25px;
+		background: no-repeat center/contain url("../assets/images/bg-quotes.png");
+	}
+}
+
+.comment {
+	padding: 1.5em 1.3em 1.2em;
+	background-color: var(--clr-primary-dark-400);
+	text-align: start;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px var(--clr-primary-dark-400);
+
+	.quote {
+		margin-bottom: 1.4em;
+		font-size: rem(10.1px);
+	}
+}

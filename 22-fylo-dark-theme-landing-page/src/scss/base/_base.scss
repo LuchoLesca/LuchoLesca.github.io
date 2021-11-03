@@ -1,0 +1,54 @@
+@use "../functions/rem" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+h2,
+h3,
+h4,
+blockquote,
+p {
+	margin: 0;
+}
+
+body {
+	width: min(100%, 1440px);
+	min-height: 100vh;
+	margin-inline: auto;
+	background-color: var(--clr-primary-dark-200);
+	color: var(--clr-neutral-white);
+	font-family: var(--ff-primary);
+	text-align: center;
+}
+
+main {
+	position: relative;
+	max-width: 1440px;
+	padding-inline: rem(33px);
+	padding-block: 8.1em 21em;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	padding: 0;
+	margin-block: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a,
+button {
+	cursor: pointer;
+}

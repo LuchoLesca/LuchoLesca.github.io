@@ -1,0 +1,22 @@
+@use "../functions/rem" as *;
+
+.btn {
+	display: inline-block;
+	padding-block: 1.1em;
+	font-size: rem(13.5px);
+	font-weight: 700;
+	border-radius: 2em;
+	border-style: none;
+
+	&--cyan {
+		color: var(--clr-neutral-white, white);
+		background: linear-gradient(
+			to right,
+			var(--clr-accent-cyan),
+			var(--clr-accent-blue)
+		);
+	}
+	&:hover {
+		background: var(--clr-accent-cyan);
+	}
+}
