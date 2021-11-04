@@ -84,7 +84,16 @@ button {
 
 .header {
   background-color: var(--clr-primary-dark-100);
+  background-image: url("../assets/images/bg-curvy-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
   font-family: var(--ff-secundary);
+}
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: url("../assets/images/bg-curvy-desktop.svg");
+  }
 }
 .header .nav-wrapper {
   padding-inline: 2.0625rem;

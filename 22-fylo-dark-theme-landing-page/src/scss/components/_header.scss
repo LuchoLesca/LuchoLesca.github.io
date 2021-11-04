@@ -4,7 +4,15 @@
 
 .header {
 	background-color: var(--clr-primary-dark-100);
+	background-image: url("../assets/images/bg-curvy-mobile.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
 	font-family: var(--ff-secundary);
+
+	@include mq(tablet) {
+		background-image: url("../assets/images/bg-curvy-desktop.svg");
+	}
 
 	.nav-wrapper {
 		padding-inline: rem(33px);
