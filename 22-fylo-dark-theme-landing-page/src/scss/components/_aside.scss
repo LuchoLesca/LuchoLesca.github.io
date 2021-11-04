@@ -1,11 +1,13 @@
 @use "../functions/rem" as *;
+@use "../functions/clampBuilder" as *;
+@use "../abstracts/breakpoints" as *;
 
 .aside {
 	position: absolute;
 	padding: 2.5em 1.8em;
 	bottom: 0;
 	left: 50%;
-	width: 90%;
+	width: min(90%, 860px);
 	background-color: var(--clr-primary-dark-100);
 	border-radius: 0.7em;
 	transform: translate(-50%, 50%);
@@ -14,6 +16,7 @@
 	.title {
 		font-family: var(--ff-secundary);
 		font-size: rem(18px);
+		font-size: clampBuilder(1.125, 2);
 		margin-bottom: 1em;
 	}
 
@@ -21,6 +24,9 @@
 		font-size: rem(13.8px);
 		line-height: 1.5;
 		margin-bottom: 2.4em;
+
+		max-width: 650px;
+		margin-inline: auto;
 	}
 
 	.form {
@@ -28,23 +34,27 @@
 		flex-wrap: wrap;
 		gap: 1.6em;
 
-		.input-email,
-		.btn {
-			width: 100%;
+		@include mq(tablet) {
+			padding-inline: rem(75px);
 		}
 
 		.input-email {
-			border-style: none;
-			display: inline-block;
+			flex: 1 1 65%;
+			padding-inline: 2em;
 			padding-block: 1.1em;
 			font-size: rem(13.5px);
 			border-radius: 2em;
-			padding-inline: 2em;
+			border-style: none;
 
 			&::placeholder {
 				font-size: 0.65rem;
 				color: var(--clr-primary-dark-100);
 			}
+		}
+
+		.btn {
+			flex: 1 1 25%;
+			min-width: 200px;
 		}
 	}
 }

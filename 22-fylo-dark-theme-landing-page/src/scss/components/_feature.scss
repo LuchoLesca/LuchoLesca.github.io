@@ -1,19 +1,25 @@
 @use "../functions/rem" as *;
+@use "../abstracts/breakpoints" as *;
 
 .features {
 	display: flex;
+	justify-content: center;
+	align-items: baseline;
 	flex-wrap: wrap;
 	gap: 5.6em;
 	padding-bottom: 10em;
 	line-height: 1.5;
+
+	@include mq(tablet) {
+		gap: 10em;
+	}
 }
 
 .feature {
+	max-width: 355px;
 	font-family: var(--ff-secundary);
 
 	.image {
-		max-height: 61px;
-		max-width: 65px;
 		margin-bottom: 2.05em;
 		margin-inline: auto;
 	}

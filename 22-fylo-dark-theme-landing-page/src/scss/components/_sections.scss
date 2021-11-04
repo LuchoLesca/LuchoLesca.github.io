@@ -1,9 +1,26 @@
 @use "../functions/rem" as *;
+@use "../functions/clampBuilder" as *;
+@use "../abstracts/breakpoints" as *;
 
 .more-info {
 	margin-bottom: 11.5em;
 	font-size: rem(15px);
 	text-align: start;
+
+	@include mq(tablet) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 4em;
+
+		.image {
+			max-width: 45%;
+		}
+
+		.content {
+			width: 40%;
+		}
+	}
 
 	.image {
 		width: 98%;
@@ -18,23 +35,31 @@
 
 	.title {
 		font-family: var(--ff-secundary);
+		font-size: clampBuilder(1.1, 2.5);
+
+		@include mq(desktop) {
+			width: 90%;
+		}
 	}
 
 	.text {
 		font-size: rem(14px);
+		font-size: clampBuilder(0.875, 1);
 		line-height: 1.5;
 	}
 
 	.link {
 		display: flex;
+		align-items: center;
 		gap: 0.5em;
-		font-size: rem(12px);
+		font-size: clampBuilder(0.75, 1);
 		color: var(--clr-accent-cyan);
 		text-decoration: underline;
 		text-underline-offset: 10px;
 
 		&::after {
 			content: url("../assets/images/icon-arrow.svg");
+			line-height: 0;
 		}
 
 		&:hover {

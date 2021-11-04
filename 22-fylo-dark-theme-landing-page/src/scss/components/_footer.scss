@@ -14,6 +14,8 @@
 
 	&__content {
 		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
 		flex-wrap: wrap;
 		gap: 5em;
 
@@ -21,12 +23,20 @@
 			flex-basis: 100%;
 		}
 
-		// @include mq(medium) {
-		// 	align-items: flex-start;
-		// 	flex-wrap: nowrap;
-		// }
+		@include mq(tablet) {
+			gap: 2em;
+
+			> * {
+				flex: 1 1 auto;
+			}
+		}
 
 		.contacts {
+			@include mq(desktop) {
+				columns: 2;
+				max-width: 60%;
+			}
+
 			&__item {
 				display: flex;
 				align-items: flex-start;
@@ -37,6 +47,7 @@
 				}
 
 				.text {
+					max-width: 330px;
 					position: relative;
 					top: -5px;
 					font-size: rem(16px);
@@ -48,9 +59,9 @@
 		.pages {
 			font-size: 1.1rem;
 
-			// @include mq(medium) {
-			// 	columns: 2;
-			// }
+			@include mq(tablet) {
+				columns: 2;
+			}
 
 			.pages__item:nth-child(4) {
 				margin-bottom: 3em;
@@ -63,7 +74,7 @@
 					margin-bottom: 1.1em;
 				}
 
-				&:hover{
+				&:hover {
 					font-weight: 700;
 				}
 			}

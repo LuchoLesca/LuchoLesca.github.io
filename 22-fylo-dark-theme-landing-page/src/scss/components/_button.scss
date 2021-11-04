@@ -1,9 +1,11 @@
 @use "../functions/rem" as *;
+@use "../functions/clampBuilder" as *;
+
 
 .btn {
 	display: inline-block;
 	padding-block: 1.1em;
-	font-size: rem(13.5px);
+	font-size: clampBuilder(0.844, 0.9);
 	font-weight: 700;
 	border-radius: 2em;
 	border-style: none;
@@ -16,6 +18,7 @@
 			var(--clr-accent-blue)
 		);
 	}
+
 	&:hover {
 		background: var(--clr-accent-cyan);
 	}

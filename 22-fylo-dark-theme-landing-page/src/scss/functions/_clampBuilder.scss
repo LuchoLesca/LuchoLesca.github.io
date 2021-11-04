@@ -4,9 +4,9 @@
 @function clampBuilder(
 	$minFontSize: 1,
 	$maxFontSize: 1,
-	$pixelsPerRem: 16,
 	$minWidthPx: 375,
-	$maxWidthPx: 1440
+	$maxWidthPx: 1440,
+	$pixelsPerRem: 16
 ) {
 	$minWidth: math.div($minWidthPx, $pixelsPerRem);
 	$maxWidth: math.div($maxWidthPx, $pixelsPerRem);
