@@ -1,1 +1,1 @@
-const fa=a=>a>10?30:43*a;
+const regexEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,$form=document.getElementById("form");$form.addEventListener("submit",(e=>{e.preventDefault();const r=e.target.elements.email?.value.trim().toLowerCase();regexEmail.test(r)?$form.classList.remove("form--error"):$form.classList.add("form--error")}));
