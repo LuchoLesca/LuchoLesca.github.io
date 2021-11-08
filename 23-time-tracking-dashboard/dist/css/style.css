@@ -31,9 +31,12 @@ p {
 }
 
 body {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: min(100%, 1440px);
   min-height: 100vh;
   background-color: var(--clr-neutral-dark-blue);
@@ -62,11 +65,21 @@ main {
   margin: 4.375rem auto;
   gap: 1.5em;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
+  main {
+    -ms-grid-rows: (1fr)[auto];
+    grid-template-rows: repeat(auto, 1fr);
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "large large" "work play" "study exercise" "social self-care";
+  }
+}
+@media screen and (min-width: 1080px) {
   main {
     -ms-grid-rows: (1fr)[2];
     grid-template-rows: repeat(2, 1fr);
-    grid-template-column: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
         grid-template-areas: "large work play study" "large exercise social self-care";
   }
 }
@@ -78,6 +91,11 @@ main {
   padding-top: 2.375rem;
   background-repeat: no-repeat;
   background-position: 92% -10%;
+}
+@media screen and (min-width: 650px) {
+  .card--small {
+    padding-top: 2.8125rem;
+  }
 }
 .card__content {
   background-color: var(--clr-neutral-blue);
@@ -102,6 +120,22 @@ main {
 .card__header {
   margin-bottom: 0.4em;
 }
+@media screen and (min-width: 650px) {
+  .card__header {
+    margin-bottom: 1.6em;
+  }
+}
+@media screen and (min-width: 650px) {
+  .card__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
 .card__category, .card__hours {
   color: white;
 }
@@ -117,6 +151,12 @@ main {
   font-size: 2rem;
   font-weight: 300;
 }
+@media screen and (min-width: 650px) {
+  .card__hours {
+    font-size: 3.5rem;
+    margin-bottom: 0.2em;
+  }
+}
 .card__accumulation {
   font-weight: 400;
   font-size: 0.875rem;
@@ -125,7 +165,7 @@ main {
   background-color: var(--clr-primary-orange);
   background-image: url("../assets/images/icon-work.svg");
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card-work {
     grid-area: work;
   }
@@ -134,7 +174,7 @@ main {
   background-color: var(--clr-primary-cyan);
   background-image: url("../assets/images/icon-play.svg");
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card-play {
     grid-area: play;
   }
@@ -143,7 +183,7 @@ main {
   background-color: var(--clr-primary-red);
   background-image: url("../assets/images/icon-study.svg");
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card-study {
     grid-area: study;
   }
@@ -152,7 +192,7 @@ main {
   background-color: var(--clr-primary-green);
   background-image: url("../assets/images/icon-exercise.svg");
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card-exercise {
     grid-area: exercise;
   }
@@ -161,7 +201,7 @@ main {
   background-color: var(--clr-primary-violet);
   background-image: url("../assets/images/icon-social.svg");
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card-social {
     grid-area: social;
   }
@@ -170,7 +210,7 @@ main {
   background-color: var(--clr-primary-yellow);
   background-image: url("../assets/images/icon-self-care.svg");
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card-self-care {
     grid-area: self-care;
   }
@@ -180,12 +220,43 @@ main {
   background-color: var(--clr-neutral-blue);
   overflow: hidden;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .card--large {
     grid-area: large;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
+  .card-work {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .card-play {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .card-study {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .card-exercise {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .card-social {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  .card-self-care {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+  }
+  .card--large {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+}
+@media screen and (min-width: 1080px) {
   .card-work {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
@@ -214,6 +285,7 @@ main {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
   }
 }
 .card--large .user {
@@ -228,10 +300,28 @@ main {
   border-radius: 1em;
   background-color: var(--clr-primary-purple);
 }
+@media screen and (min-width: 650px) {
+  .card--large .user {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-bottom: 4.5em;
+  }
+}
 .card--large .user .user__image {
   width: 70px;
   border-radius: 50%;
   border: 3px solid var(--clr-neutral-gray);
+}
+@media screen and (min-width: 650px) {
+  .card--large .user .user__image {
+    width: 85px;
+    margin-bottom: 1.5em;
+  }
 }
 .card--large .user .user__info > * {
   font-weight: 300;
@@ -244,6 +334,11 @@ main {
   margin-top: 0.2em;
   color: var(--clr-neutral-gray);
 }
+@media screen and (min-width: 650px) {
+  .card--large .user .user__info .name {
+    font-size: 2.25rem;
+  }
+}
 .card--large .periodicity-filter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,6 +347,19 @@ main {
       -ms-flex-align: center;
           align-items: center;
   padding-block: 1.5em;
+}
+@media screen and (min-width: 1080px) {
+  .card--large .periodicity-filter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 1.5em;
+    padding-inline: 1.5em;
+  }
 }
 .card--large .filter__item {
   -ms-flex-preferred-size: 100%;

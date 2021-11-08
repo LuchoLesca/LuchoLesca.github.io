@@ -17,8 +17,8 @@ p {
 }
 
 body {
-	display: grid;
-	place-items: center;
+	display: flex;
+	align-items: center;
 	width: min(100%, 1440px);
 	min-height: 100vh;
 	background-color: var(--clr-neutral-dark-blue);
@@ -47,8 +47,14 @@ main {
 	gap: 1.5em;
 
 	@include mq(tablet) {
+		grid-template-rows: repeat(auto, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "large large" "work play" "study exercise" "social self-care";
+	}
+
+	@include mq(desktop) {
 		grid-template-rows: repeat(2, 1fr);
-		grid-template-column: repeat(4, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas:
 			"large work play study"
 			"large exercise social self-care";

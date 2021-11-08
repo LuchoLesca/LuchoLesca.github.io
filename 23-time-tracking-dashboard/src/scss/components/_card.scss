@@ -7,6 +7,10 @@
 		padding-top: rem(38px);
 		background-repeat: no-repeat;
 		background-position: 92% -10%;
+
+		@include mq(tablet) {
+			padding-top: rem(45px);
+		}
 	}
 
 	&__content {
@@ -29,6 +33,17 @@
 
 	&__header {
 		margin-bottom: 0.4em;
+
+		@include mq(tablet) {
+			margin-bottom: 1.6em;
+		}
+	}
+
+	&__body {
+		@include mq(tablet) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 
 	&__category,
@@ -50,6 +65,11 @@
 	&__hours {
 		font-size: rem(32px);
 		font-weight: 300;
+
+		@include mq(tablet) {
+			font-size: rem(56px);
+			margin-bottom: 0.2em;
+		}
 	}
 
 	&__accumulation {
@@ -127,18 +147,22 @@
 		padding: 2em;
 		border-radius: 1em;
 		background-color: var(--clr-primary-purple);
-
-		// @include mq(tablet) {
-		// 	flex-wrap: wrap;
-		// 	> * {
-		// 		width: 100%;
-		// 	}
-		// }
+		
+		@include mq(tablet) {
+			flex-direction: column;
+			align-items: flex-start;
+			padding-bottom: 4.5em;
+		}
 
 		.user__image {
 			width: 70px;
 			border-radius: 50%;
 			border: 3px solid var(--clr-neutral-gray);
+
+			@include mq(tablet) {
+				width: 85px;
+				margin-bottom: 1.5em;
+			}
 		}
 
 		.user__info {
@@ -155,9 +179,9 @@
 				margin-top: 0.2em;
 				color: var(--clr-neutral-gray);
 
-				// @include mq(tablet) {
-				// 	font-size: rem(36px);
-				// }
+				@include mq(tablet) {
+					font-size: rem(36px);
+				}
 			}
 		}
 	}
@@ -167,12 +191,12 @@
 		align-items: center;
 		padding-block: 1.5em;
 
-		// @include mq(tablet) {
-		// 	flex-direction: column;
-		// 	align-items: flex-start;
-		// 	gap: 1em;
-		// 	padding-inline: 1.5em;
-		// }
+		@include mq(desktop) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1.5em;
+			padding-inline: 1.5em;
+		}
 	}
 
 	.filter__item {
