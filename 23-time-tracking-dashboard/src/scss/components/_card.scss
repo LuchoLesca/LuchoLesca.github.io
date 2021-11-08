@@ -13,6 +13,11 @@
 		background-color: var(--clr-neutral-blue);
 		border-radius: 1em;
 		padding: rem(28px);
+
+		&:hover {
+			background-color: var(--clr-neutral-light-blue);
+			cursor: pointer;
+		}
 	}
 
 	&__header,
@@ -33,6 +38,13 @@
 
 	&__category {
 		font-size: rem(18px);
+	}
+
+	&__options {
+		&:hover {
+			cursor: pointer;
+			filter: brightness(100);
+		}
 	}
 
 	&__hours {
@@ -171,6 +183,11 @@
 
 		&--selected {
 			color: var(--clr-neutral-gray);
+		}
+
+		&:hover {
+			color: var(--clr-neutral-gray);
+			cursor: pointer;
 		}
 	}
 }

@@ -8,7 +8,7 @@
   --clr-primary-yellow: #f1c65b;
   --clr-neutral-dark-blue: #0f1424;
   --clr-neutral-blue: #1c1f4a;
-  --clr-neutral-light-blue: #6f76c8;
+  --clr-neutral-light-blue: #424bae;
   --clr-neutral-gray: #bdc1ff;
   --ff-primary: "Rubik", sans-serif;
 }
@@ -84,6 +84,10 @@ main {
   border-radius: 1em;
   padding: 1.75rem;
 }
+.card__content:hover {
+  background-color: var(--clr-neutral-light-blue);
+  cursor: pointer;
+}
 .card__header, .card__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,6 +107,11 @@ main {
 }
 .card__category {
   font-size: 1.125rem;
+}
+.card__options:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(100);
+          filter: brightness(100);
 }
 .card__hours {
   font-size: 2rem;
@@ -253,4 +262,8 @@ main {
 }
 .card--large .filter__item--selected {
   color: var(--clr-neutral-gray);
+}
+.card--large .filter__item:hover {
+  color: var(--clr-neutral-gray);
+  cursor: pointer;
 }
