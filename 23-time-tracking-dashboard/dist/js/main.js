@@ -1,4 +1,6 @@
 const $main = document.getElementById("main")
+const $filter = document.getElementById("filter")
+let $cards
 
 const createCardHtml = (cardData) => {
 	const card = document.createElement("article")
@@ -35,7 +37,7 @@ const createCardHtml = (cardData) => {
 	return card
 }
 
-const writeCardsInHtml = (cards) => {
+const drawCardsInHtml = (cards) => {
 	const fragment = document.createDocumentFragment()
 	for (cardData of cards) {
 		const card = createCardHtml(cardData)
@@ -48,10 +50,68 @@ const fetchAllData = async () => {
 	try {
 		const response = await fetch("./data.json")
 		const cardsData = await response.json()
-		writeCardsInHtml(cardsData)
+		drawCardsInHtml(cardsData)
 	} catch (error) {
 		console.log(`Error: ${error}`)
 	}
 }
 
+const setCardsElements = () => {
+	$cards = [...$main.querySelectorAll(".card")]
+}
+
+updateCardsElementDataByFilter = async (filter) => {
+	const timeLapsePhrase = {
+		daily: "Yesterday",
+		weekly: "Last Week",
+		monthly: "Last Month",
+	}
+
+	try {
+		// Get JSON data
+		const response = await fetch("./data.json")
+		const cardsData = await response.json()
+		// Update DOM Cards
+		for (card of $cards) {
+			// Get nodeElement to update
+			const cardCategory = card.querySelector(".card__category")
+			const cardHours = card.querySelector(".card__hours")
+			const cardAccumulation = card.querySelector(".card__accumulation")
+			// I get details of the necessary card
+			const cardData = cardsData.find(
+				(item) =>
+					item.title.toLowerCase() === cardCategory.textContent.toLowerCase()
+			)
+			// Update textContents
+			const newTimeFrames = cardData.timeframes[filter]
+			cardHours.textContent = `${newTimeFrames.current}hs`
+			cardAccumulation.textContent = `${timeLapsePhrase[filter]} - ${newTimeFrames.previous}hs`
+		}
+	} catch (error) {
+		console.log(`Error: ${error}`)
+	}
+}
+
+let currentFilter = "weekly"
+$filter.addEventListener("click", (e) => {
+	if (e.target.classList.contains("filter__item")) {
+		const selectedFilter = e.target.textContent.toLowerCase()
+		if (selectedFilter !== currentFilter) {
+			updateCardsElementDataByFilter(selectedFilter)
+			currentFilter = selectedFilter
+
+			const $filterItems = [...$filter.querySelectorAll(".filter__item")]
+			for (item of $filterItems) {
+				if (item.classList.contains("filter__item--selected"))
+					item.classList.remove("filter__item--selected")
+				if (item.textContent.toLowerCase() === selectedFilter)
+					item.classList.add("filter__item--selected")
+			}
+		}
+	}
+})
+
+// Upload data page
 fetchAllData()
+	.then(() => setCardsElements())
+	.catch((error) => console.log("Error:", error))

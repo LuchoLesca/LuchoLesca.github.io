@@ -37,8 +37,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: min(100%, 1440px);
+  width: 100%;
   min-height: 100vh;
+  margin: 0 auto;
   background-color: var(--clr-neutral-dark-blue);
 }
 
@@ -218,6 +219,7 @@ main {
 
 .card--large {
   background-color: var(--clr-neutral-blue);
+  border-radius: 1em;
   overflow: hidden;
 }
 @media screen and (min-width: 650px) {

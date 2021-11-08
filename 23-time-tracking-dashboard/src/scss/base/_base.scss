@@ -19,8 +19,9 @@ p {
 body {
 	display: flex;
 	align-items: center;
-	width: min(100%, 1440px);
+	width: 100%;
 	min-height: 100vh;
+	margin: 0 auto;
 	background-color: var(--clr-neutral-dark-blue);
 }
 

@@ -134,6 +134,7 @@
 
 .card--large {
 	background-color: var(--clr-neutral-blue);
+	border-radius: 1em;
 	overflow: hidden;
 
 	@include mq(tablet) {
