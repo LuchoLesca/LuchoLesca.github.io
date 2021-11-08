@@ -1,0 +1,256 @@
+:root {
+  --clr-primary-purple: #5847eb;
+  --clr-primary-orange: #ff8c66;
+  --clr-primary-cyan: #56c2e6;
+  --clr-primary-red: #ff5c7c;
+  --clr-primary-green: #4acf81;
+  --clr-primary-violet: #7536d3;
+  --clr-primary-yellow: #f1c65b;
+  --clr-neutral-dark-blue: #0f1424;
+  --clr-neutral-blue: #1c1f4a;
+  --clr-neutral-light-blue: #6f76c8;
+  --clr-neutral-gray: #bdc1ff;
+  --ff-primary: "Rubik", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  color: var(--clr-neutral-gray);
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: min(100%, 1440px);
+  min-height: 100vh;
+  background-color: var(--clr-neutral-dark-blue);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  padding: 0;
+  margin-block: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  width: clamp(325px, 86.7%, 1110px);
+  margin: 4.375rem auto;
+  gap: 1.5em;
+}
+@media screen and (min-width: 768px) {
+  main {
+    -ms-grid-rows: (1fr)[2];
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-column: repeat(4, 1fr);
+        grid-template-areas: "large work play study" "large exercise social self-care";
+  }
+}
+
+.card {
+  border-radius: 1em;
+}
+.card--small {
+  padding-top: 2.375rem;
+  background-repeat: no-repeat;
+  background-position: 92% -10%;
+}
+.card__content {
+  background-color: var(--clr-neutral-blue);
+  border-radius: 1em;
+  padding: 1.75rem;
+}
+.card__header, .card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card__header {
+  margin-bottom: 0.4em;
+}
+.card__category, .card__hours {
+  color: white;
+}
+.card__category {
+  font-size: 1.125rem;
+}
+.card__hours {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.card__accumulation {
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+.card-work {
+  background-color: var(--clr-primary-orange);
+  background-image: url("../assets/images/icon-work.svg");
+}
+@media screen and (min-width: 768px) {
+  .card-work {
+    grid-area: work;
+  }
+}
+.card-play {
+  background-color: var(--clr-primary-cyan);
+  background-image: url("../assets/images/icon-play.svg");
+}
+@media screen and (min-width: 768px) {
+  .card-play {
+    grid-area: play;
+  }
+}
+.card-study {
+  background-color: var(--clr-primary-red);
+  background-image: url("../assets/images/icon-study.svg");
+}
+@media screen and (min-width: 768px) {
+  .card-study {
+    grid-area: study;
+  }
+}
+.card-exercise {
+  background-color: var(--clr-primary-green);
+  background-image: url("../assets/images/icon-exercise.svg");
+}
+@media screen and (min-width: 768px) {
+  .card-exercise {
+    grid-area: exercise;
+  }
+}
+.card-social {
+  background-color: var(--clr-primary-violet);
+  background-image: url("../assets/images/icon-social.svg");
+}
+@media screen and (min-width: 768px) {
+  .card-social {
+    grid-area: social;
+  }
+}
+.card-self-care {
+  background-color: var(--clr-primary-yellow);
+  background-image: url("../assets/images/icon-self-care.svg");
+}
+@media screen and (min-width: 768px) {
+  .card-self-care {
+    grid-area: self-care;
+  }
+}
+
+.card--large {
+  background-color: var(--clr-neutral-blue);
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .card--large {
+    grid-area: large;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-work {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .card-play {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .card-study {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+  }
+  .card-exercise {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .card-social {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .card-self-care {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+  }
+  .card--large {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+}
+.card--large .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.2em;
+  padding: 2em;
+  border-radius: 1em;
+  background-color: var(--clr-primary-purple);
+}
+.card--large .user .user__image {
+  width: 70px;
+  border-radius: 50%;
+  border: 3px solid var(--clr-neutral-gray);
+}
+.card--large .user .user__info > * {
+  font-weight: 300;
+}
+.card--large .user .user__info .reported {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.card--large .user .user__info .name {
+  margin-top: 0.2em;
+  color: var(--clr-neutral-gray);
+}
+.card--large .periodicity-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-block: 1.5em;
+}
+.card--large .filter__item {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--clr-neutral-light-blue);
+}
+.card--large .filter__item--selected {
+  color: var(--clr-neutral-gray);
+}
