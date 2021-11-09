@@ -2,6 +2,7 @@
 
 .calculator {
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
 	gap: 2em;
 	padding: rem(32px) rem(24px);
@@ -14,12 +15,17 @@
 
 	@include mq(tablet) {
 		flex-wrap: nowrap;
+		padding-inline: rem(32px);
 	}
 }
 
 // FORM
 .form {
 	padding-inline: rem(8px);
+
+	@include mq(tablet) {
+		padding: rem(14px);
+	}
 }
 
 .title-wrapper {
@@ -41,7 +47,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1em;
-	padding: 0.3em 1em;
+	padding: 0.3em 0.8em;
 	background-color: var(--clr-neutral-cyan-500);
 }
 
@@ -87,11 +93,20 @@
 		.input-wrapper {
 			flex: 1 1 40%;
 			text-align: center;
+
+			@include mq(desktop) {
+				flex-basis: 30%;
+			}
 		}
 
 		.input:not([type]) {
 			&::placeholder {
 				color: var(--clr-neutral-cyan-200);
+			}
+
+			@include mq(tablet) {
+				letter-spacing: -1px;
+				text-align: center;
 			}
 		}
 
@@ -117,9 +132,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1.9em;
+	max-width: 400px;
 	padding: 2.4em 1.5em 1.4em;
 	background-color: var(--clr-neutral-cyan-100);
 	border-radius: 1em;
+
+	@include mq(tablet) {
+		padding: 2.5em 2.5em 2.5em;
+	}
 
 	.info-content {
 		@include mq(tablet) {
@@ -151,7 +171,7 @@
 	.value {
 		position: relative;
 		bottom: 3px;
-		font-size: rem(32px);
+		font-size: clampBuilder(2, 3, 375, 768);
 		font-weight: 700;
 		color: var(--clr-primary-cyan);
 	}
