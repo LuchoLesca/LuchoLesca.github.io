@@ -39,7 +39,7 @@
 
 .btn,
 .input-wrapper {
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 .input-wrapper {
@@ -49,6 +49,10 @@
 	gap: 1em;
 	padding: 0.3em 0.8em;
 	background-color: var(--clr-neutral-cyan-500);
+
+	&:focus-within {
+		outline: 2px solid var(--clr-primary-cyan);
+	}
 }
 
 .input,
@@ -57,6 +61,10 @@
 	border: none;
 	font-size: rem(24px);
 	font-weight: 700;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .input {
@@ -72,6 +80,7 @@
 
 .btn {
 	padding-block: 0.25em;
+	transition: all 0.4s;
 }
 
 .input-group:not(:last-child) {
@@ -110,18 +119,26 @@
 			}
 		}
 
-		input[type="radio"] {
-			display: none;
-		}
-
 		.btn {
 			color: var(--clr-neutral-cyan-500);
 			background-color: var(--clr-neutral-cyan-100);
 		}
 
+		input[type="radio"] {
+			display: none;
+		}
+
 		input:checked + .btn {
 			color: var(--clr-neutral-cyan-100);
 			background-color: var(--clr-primary-cyan);
+		}
+
+		.btn,
+		input:checked + .btn {
+			&:hover {
+				color: var(--clr-neutral-cyan-100);
+				background-color: var(--clr-neutral-cyan-400);
+			}
 		}
 	}
 }
@@ -183,5 +200,13 @@
 		color: var(--clr-neutral-cyan-100);
 		text-transform: uppercase;
 		font-size: rem(20px);
+
+		&:hover {
+			background-color: var(--clr-neutral-cyan-400);
+		}
+
+		&--incomplete {
+			opacity: 0.2;
+		}
 	}
 }

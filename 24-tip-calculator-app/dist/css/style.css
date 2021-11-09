@@ -52,7 +52,7 @@ main {
   width: min(100%, 900px);
   margin-inline: auto;
 }
-main > .title {
+main .main-title {
   margin-bottom: 1.5em;
   color: var(--clr-neutral-cyan-200);
   font-size: 1.5rem;
@@ -60,8 +60,8 @@ main > .title {
   letter-spacing: 8px;
 }
 
-fieldset {
-  border: none;
+input:focus-within {
+  outline: none;
 }
 
 .calculator {
@@ -109,7 +109,7 @@ fieldset {
 
 .btn,
 .input-wrapper {
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .input-wrapper {
@@ -126,6 +126,9 @@ fieldset {
   padding: 0.3em 0.8em;
   background-color: var(--clr-neutral-cyan-500);
 }
+.input-wrapper:focus-within {
+  outline: 2px solid var(--clr-primary-cyan);
+}
 
 .input,
 .btn {
@@ -133,6 +136,10 @@ fieldset {
   border: none;
   font-size: 1.5rem;
   font-weight: 700;
+}
+.input:hover,
+.btn:hover {
+  cursor: pointer;
 }
 
 .input {
@@ -159,6 +166,8 @@ fieldset {
 
 .btn {
   padding-block: 0.25em;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .input-group:not(:last-child) {
@@ -214,16 +223,21 @@ fieldset {
     text-align: center;
   }
 }
-.input-percent .input-btn-wrapper input[type=radio] {
-  display: none;
-}
 .input-percent .input-btn-wrapper .btn {
   color: var(--clr-neutral-cyan-500);
   background-color: var(--clr-neutral-cyan-100);
 }
+.input-percent .input-btn-wrapper input[type=radio] {
+  display: none;
+}
 .input-percent .input-btn-wrapper input:checked + .btn {
   color: var(--clr-neutral-cyan-100);
   background-color: var(--clr-primary-cyan);
+}
+.input-percent .input-btn-wrapper .btn:hover,
+.input-percent .input-btn-wrapper input:checked + .btn:hover {
+  color: var(--clr-neutral-cyan-100);
+  background-color: var(--clr-neutral-cyan-400);
 }
 
 .output-display {
@@ -287,4 +301,10 @@ fieldset {
   color: var(--clr-neutral-cyan-100);
   text-transform: uppercase;
   font-size: 1.25rem;
+}
+.output-display .btn-reset:hover {
+  background-color: var(--clr-neutral-cyan-400);
+}
+.output-display .btn-reset--incomplete {
+  opacity: 0.2;
 }

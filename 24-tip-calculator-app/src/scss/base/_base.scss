@@ -19,7 +19,6 @@ fieldset {
 body {
 	width: min(100%, 1440px);
 	min-height: 100vh;
-	// margin: 0 auto;
 	background-color: var(--clr-neutral-cyan-400);
 }
 
@@ -43,7 +42,7 @@ main {
 	width: min(100%, 900px);
 	margin-inline: auto;
 
-	& > .title {
+	.main-title {
 		margin-bottom: 1.5em;
 		color: var(--clr-neutral-cyan-200);
 		font-size: rem(24px);
@@ -52,6 +51,6 @@ main {
 	}
 }
 
-fieldset {
-	border: none;
+input:focus-within {
+	outline: none;
 }
