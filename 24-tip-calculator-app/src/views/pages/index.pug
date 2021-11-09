@@ -1,0 +1,70 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Fonts
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        //- Stylesheet
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="./assets/images/favicon-32x32.png", type="image/x-icon")
+        //- title
+        title Frontend Mentor | Tip Calculator App
+    body
+        main
+            h1.title SPLI
+                br
+                | TTER
+            section.calculator
+                form.form
+                    .input-group.input-bill
+                        .title-wrapper
+                            label.title Bill
+                        .input-wrapper
+                            img(src="./assets/images/icon-dollar.svg", alt="dollar icon")
+                            input.input.input__amount(name="amount" placeholder="0")
+
+                    .input-group.input-percent
+                        .title-wrapper
+                            label.title Select Tip %
+                        .input-btn-wrapper
+                            input(type="radio" id="5%" name="percentage")
+                            label.btn(for="5%") 5%
+                            input(type="radio" id="10%" name="percentage")
+                            label.btn(for="10%") 10%
+                            input(type="radio" id="15%" name="percentage")
+                            label.btn(for="15%") 15%
+                            input(type="radio" id="25%" name="percentage")
+                            label.btn(for="25%") 25%
+                            input(type="radio" id="50%" name="percentage")
+                            label.btn(for="50%") 50%
+                            .input-wrapper
+                                input.input(id="custom" name="percentage" placeholder="Custom")
+
+                    .input-group.input-people
+                        .title-wrapper
+                            label.title Number of People
+                        .input-wrapper
+                            img(src="./assets/images/icon-person.svg", alt="person icon")
+                            input.input.input__people(name="people" placeholder="0")
+
+                div.output-display
+                    .info-content
+                        .line-output
+                            .title-wrapper
+                                p.title Tip Amount
+                                p.desc / person
+                            p.value $0.00
+                        .line-output
+                            .title-wrapper
+                                p.title Total
+                                p.desc / person
+                            p.value $0.00
+                        
+                    button.btn.btn-reset Reset
+            
+
+

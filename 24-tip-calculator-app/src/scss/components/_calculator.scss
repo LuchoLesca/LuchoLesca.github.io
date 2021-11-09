@@ -1,0 +1,167 @@
+@use "../functions/" as *;
+
+.calculator {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+	padding: rem(32px) rem(24px);
+	background-color: var(--clr-neutral-white);
+	border-radius: 1.5em;
+
+	> * {
+		width: 100%;
+	}
+
+	@include mq(tablet) {
+		flex-wrap: nowrap;
+	}
+}
+
+// FORM
+.form {
+	padding-inline: rem(8px);
+}
+
+.title-wrapper {
+	margin-bottom: rem(5px);
+	.title {
+		font-size: 16px;
+		color: var(--clr-neutral-cyan-200);
+		font-weight: 700;
+	}
+}
+
+.btn,
+.input-wrapper {
+	border-radius: 5px;
+}
+
+.input-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
+	padding: 0.3em 1em;
+	background-color: var(--clr-neutral-cyan-500);
+}
+
+.input,
+.btn {
+	display: inline-block;
+	border: none;
+	font-size: rem(24px);
+	font-weight: 700;
+}
+
+.input {
+	background-color: transparent;
+	color: var(--clr-neutral-cyan-100);
+	text-align: end;
+	width: 100%;
+
+	&::placeholder {
+		color: var(--clr-neutral-cyan-300);
+	}
+}
+
+.btn {
+	padding-block: 0.25em;
+}
+
+.input-group:not(:last-child) {
+	margin-bottom: 2.1em;
+}
+
+.input-percent {
+	.title-wrapper {
+		margin-bottom: rem(16px);
+	}
+
+	.input-btn-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 1em;
+
+		.btn,
+		.input-wrapper {
+			flex: 1 1 40%;
+			text-align: center;
+		}
+
+		.input:not([type]) {
+			&::placeholder {
+				color: var(--clr-neutral-cyan-200);
+			}
+		}
+
+		input[type="radio"] {
+			display: none;
+		}
+
+		.btn {
+			color: var(--clr-neutral-cyan-500);
+			background-color: var(--clr-neutral-cyan-100);
+		}
+
+		input:checked + .btn {
+			color: var(--clr-neutral-cyan-100);
+			background-color: var(--clr-primary-cyan);
+		}
+	}
+}
+
+// OUTPUT DISPLAY
+
+.output-display {
+	display: flex;
+	flex-direction: column;
+	gap: 1.9em;
+	padding: 2.4em 1.5em 1.4em;
+	background-color: var(--clr-neutral-cyan-100);
+	border-radius: 1em;
+
+	.info-content {
+		@include mq(tablet) {
+			margin-bottom: auto;
+		}
+	}
+
+	.line-output {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.line-output:not(:last-child) {
+		margin-bottom: 1.2em;
+	}
+
+	.title {
+		font-size: rem(16px);
+		color: var(--clr-neutral-cyan-500);
+	}
+
+	.desc {
+		font-size: rem(13px);
+		font-weight: 700;
+		color: var(--clr-neutral-cyan-300);
+	}
+
+	.value {
+		position: relative;
+		bottom: 3px;
+		font-size: rem(32px);
+		font-weight: 700;
+		color: var(--clr-primary-cyan);
+	}
+
+	.btn-reset {
+		width: 100%;
+		padding-block: 0.5em;
+		background-color: var(--clr-primary-cyan);
+		color: var(--clr-neutral-cyan-100);
+		text-transform: uppercase;
+		font-size: rem(20px);
+	}
+}
