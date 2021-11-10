@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
     <title>Frontend Mentor | Tip Calculator App</title>
+    <script defer src="./js/main.js"> </script>
   </head>
   <body>
     <main>
       <h1 class="main-title">SPLI<br>TTER</h1>
       <section class="calculator">
-        <form class="form">
-          <div class="input-group input-bill">
+        <form class="form" id="form">
+          <div class="input-group">
             <div class="title-wrapper">
               <label class="title">Bill</label>
             </div>
             <div class="input-wrapper"><img src="./assets/images/icon-dollar.svg" alt="dollar icon">
-              <input class="input input__amount" name="amount" placeholder="0">
+              <input class="input" id="inputAmount" name="amount" placeholder="0">
             </div>
           </div>
           <div class="input-group input-percent">
@@ -28,27 +29,27 @@
               <label class="title">Select Tip %</label>
             </div>
             <div class="input-btn-wrapper">
-              <input type="radio" id="5%" name="percentage">
-              <label class="btn" for="5%">5%</label>
-              <input type="radio" id="10%" name="percentage">
-              <label class="btn" for="10%">10%</label>
-              <input type="radio" id="15%" name="percentage">
-              <label class="btn" for="15%">15%</label>
-              <input type="radio" id="25%" name="percentage">
-              <label class="btn" for="25%">25%</label>
-              <input type="radio" id="50%" name="percentage">
-              <label class="btn" for="50%">50%</label>
+              <input type="radio" id="5" value="5%" name="percentage">
+              <label class="btn" for="5">5%</label>
+              <input type="radio" id="10" value="10%" name="percentage">
+              <label class="btn" for="10">10%</label>
+              <input type="radio" id="15" value="15%" name="percentage">
+              <label class="btn" for="15">15%</label>
+              <input type="radio" id="25" value="25%" name="percentage">
+              <label class="btn" for="25">25%</label>
+              <input type="radio" id="50" value="50%" name="percentage">
+              <label class="btn" for="50">50%</label>
               <div class="input-wrapper">
-                <input class="input" id="custom" name="percentage" placeholder="Custom">
+                <input class="input" id="inputPercentageCustom" name="percentage" placeholder="Custom">
               </div>
             </div>
           </div>
-          <div class="input-group input-people">
+          <div class="input-group">
             <div class="title-wrapper">
               <label class="title">Number of People</label>
             </div>
             <div class="input-wrapper"><img src="./assets/images/icon-person.svg" alt="person icon">
-              <input class="input input__people" name="people" placeholder="0">
+              <input class="input" id="inputPeople" name="people" placeholder="0">
             </div>
           </div>
         </form>
@@ -59,17 +60,17 @@
                 <p class="title">Tip Amount</p>
                 <p class="desc">/ person</p>
               </div>
-              <p class="value">$0.00</p>
+              <p class="value" id="tipAmount">$0.00</p>
             </div>
             <div class="line-output">
               <div class="title-wrapper">
                 <p class="title">Total</p>
                 <p class="desc">/ person</p>
               </div>
-              <p class="value">$0.00</p>
+              <p class="value" id="total">$0.00</p>
             </div>
           </div>
-          <button class="btn btn-reset">Reset</button>
+          <button class="btn btn-reset btn-reset--empty" id="btn-reset">Reset</button>
         </div>
       </section>
     </main>

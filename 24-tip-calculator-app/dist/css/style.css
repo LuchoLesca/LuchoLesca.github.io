@@ -1,5 +1,6 @@
 :root {
   --clr-primary-cyan: #26c0ab;
+  --clr-primary-red: #e05252;
   --clr-neutral-cyan-100: #00494d;
   --clr-neutral-cyan-200: #5e7a7d;
   --clr-neutral-cyan-300: #7f9c9f;
@@ -113,21 +114,18 @@ input:focus-within {
 }
 
 .input-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 1em;
-  padding: 0.3em 0.8em;
+  position: relative;
   background-color: var(--clr-neutral-cyan-500);
 }
 .input-wrapper:focus-within {
   outline: 2px solid var(--clr-primary-cyan);
+}
+.input-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 1.2em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .input,
@@ -146,6 +144,7 @@ input:focus-within {
   background-color: transparent;
   color: var(--clr-neutral-cyan-100);
   text-align: end;
+  padding: 0.3em 0.8em 0.3em 1.8em;
   width: 100%;
 }
 .input::-webkit-input-placeholder {
@@ -202,6 +201,9 @@ input:focus-within {
         flex-basis: 30%;
   }
 }
+.input-percent .input-btn-wrapper .input:not([type]) {
+  padding-inline: 0.8em;
+}
 .input-percent .input-btn-wrapper .input:not([type])::-webkit-input-placeholder {
   color: var(--clr-neutral-cyan-200);
 }
@@ -220,6 +222,25 @@ input:focus-within {
 @media screen and (min-width: 768px) {
   .input-percent .input-btn-wrapper .input:not([type]) {
     letter-spacing: -1px;
+  }
+  .input-percent .input-btn-wrapper .input:not([type])::-webkit-input-placeholder {
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  .input-percent .input-btn-wrapper .input:not([type])::-moz-placeholder {
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  .input-percent .input-btn-wrapper .input:not([type]):-ms-input-placeholder {
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  .input-percent .input-btn-wrapper .input:not([type])::-ms-input-placeholder {
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  .input-percent .input-btn-wrapper .input:not([type])::placeholder {
+    font-size: 1.375rem;
     text-align: center;
   }
 }
@@ -305,6 +326,6 @@ input:focus-within {
 .output-display .btn-reset:hover {
   background-color: var(--clr-neutral-cyan-400);
 }
-.output-display .btn-reset--incomplete {
+.output-display .btn-reset--empty {
   opacity: 0.2;
 }
