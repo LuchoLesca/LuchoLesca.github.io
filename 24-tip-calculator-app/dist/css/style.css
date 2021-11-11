@@ -120,6 +120,20 @@ input:focus-within {
 .input-wrapper:focus-within {
   outline: 2px solid var(--clr-primary-cyan);
 }
+.input-wrapper.invalid-value {
+  outline: 2px solid var(--clr-primary-red);
+}
+.input-wrapper.invalid-value::before {
+  position: absolute;
+  content: "Can't be zero";
+  top: -1.8em;
+  right: 0;
+  font-weight: 700;
+  color: var(--clr-primary-red);
+  visibility: visible;
+  outline-color: var(--clr-primary-red);
+  outline-color: red;
+}
 .input-wrapper img {
   position: absolute;
   top: 50%;
