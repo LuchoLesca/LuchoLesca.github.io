@@ -1,4 +1,4 @@
-import { formatValue, print } from "./util.js"
+import { formatValue } from "./util.js"
 import calculate from "./calculate.js"
 import regexs from "./regex.js"
 
@@ -15,28 +15,21 @@ const inputs = {
 	amount: {
 		node: document.getElementById("inputAmount"),
 		defaultValue: "0",
-		storedValue: "0",
+		storedValue: "",
 		regexValid: regexs.float,
 	},
 	percentage: {
 		node: document.getElementById("inputPercentageCustom"),
 		defaultValue: "0",
-		storedValue: "0",
+		storedValue: "",
 		regexValid: regexs.number,
 	},
 	people: {
 		node: document.getElementById("inputPeople"),
 		defaultValue: "1",
-		storedValue: "1",
+		storedValue: "",
 		regexValid: regexs.number,
 	},
-}
-
-function formatInputValues() {
-	Object.keys(inputs).forEach((key) => {
-		const value = inputs[key].node.value
-		setNodeValue(key, formatValue(value))
-	})
 }
 
 function initStoredValues() {
@@ -46,13 +39,11 @@ function initStoredValues() {
 			value =
 				document.querySelector("[checked]")?.value.replace("%", "") ||
 				inputs[key].defaultValue
-		else value = inputs[key].node.value || inputs[key].defaultValue
+		else value = inputs[key].node.value
+		// else value = inputs[key].node.value || inputs[key].defaultValue
 		setStoredValue(key, value)
 	})
 }
-
-// formatInputValues()
-// initStoredValues()
 /******/
 
 // Input Object Managment
@@ -92,34 +83,50 @@ function ecualStoredAndDefault(name) {
 }
 
 // Output
-
 const setOutputValues = () => {
-	const { extraAmountPerPerson, totalPerPerson } = calculate(
+	let { extraAmountPerPerson, totalPerPerson } = calculate(
 		inputs["amount"].storedValue,
 		inputs["percentage"].storedValue,
 		inputs["people"].storedValue
 	)
 
-	if (!isFinite(totalPerPerson))
-		return inputs["people"].node.parentNode.classList.add("invalid-value")
+	if (inputs["people"].node.value === "0")
+		inputs["people"].node.parentNode.classList.add("invalid-value")
+	else inputs["people"].node.parentNode.classList.remove("invalid-value")
 
-	inputs["people"].node.parentNode.classList.remove("invalid-value")
+	if (extraAmountPerPerson / 1000 > 1)
+		extraAmountPerPerson = `${(extraAmountPerPerson / 1000).toFixed(2)}k`
 
-	let valueExtraAmountPerPerson = "$"
-	let valueTotalPerPerson = "$"
+	if (totalPerPerson / 1000 > 1)
+		totalPerPerson = `${(totalPerPerson / 1000).toFixed(2)}k`
 
-	valueExtraAmountPerPerson +=
-		extraAmountPerPerson.toString().split(".")[0].length > 3
-			? `${(extraAmountPerPerson / 1000).toFixed(2)}k`
-			: extraAmountPerPerson
+	$tipAmount.textContent = `$${extraAmountPerPerson}`
+	$total.textContent = `$${totalPerPerson}`
+}
 
-	valueTotalPerPerson +=
-		totalPerPerson.toString().split(".")[0].length > 3
-			? `${(totalPerPerson / 1000).toFixed(2)}k`
-			: totalPerPerson
+// Handles
+const handleInputPercentageFocus = (e) => {
+	deselectedRadios()
+	setStoredValue("percentage", e.target.value)
+	setOutputValues()
+	setEmptyBtnOpacity()
+}
 
-	$tipAmount.textContent = valueExtraAmountPerPerson
-	$total.textContent = valueTotalPerPerson
+const handleInputChange = (e) => {
+	const input = e.target
+	const name = input.name
+	const type = input.type
+	let value = formatValue(input.value)
+	if (!value) setStoredValue(name, value)
+	if (validateInput(name, value)) {
+		setStoredValue(name, value)
+		if (type !== "radio") setNodeValue(name, value)
+	} else {
+		value = ecualStoredAndDefault(name) ? "" : inputs[name].storedValue
+		setNodeValue(name, value)
+	}
+	setOutputValues()
+	setEmptyBtnOpacity()
 }
 
 // LISTENERS
@@ -130,33 +137,24 @@ $btnReset.addEventListener("click", () => {
 	setOutputValues()
 })
 
-inputs["percentage"].node.addEventListener("focus", (e) => {
-	deselectedRadios()
-	setStoredValue(
-		"percentage",
-		e.target.value || inputs["percentage"].defaultValue
-	)
-	setOutputValues()
-})
+inputs["percentage"].node.addEventListener("focus", handleInputPercentageFocus)
 
-$form.addEventListener("input", (e) => {
-	const input = e.target
-	const name = input.name
-	let value = formatValue(input.value)
-	if (!value) return setDefaultAsStoredValue(name)
-	if (validateInput(name, value)) {
-		setStoredValue(name, value)
-		// To clean inputValue at click radioButton
-		// if (input.type === "radio") setNodeValue(name, "")
-	} else {
-		value = ecualStoredAndDefault(name) ? "" : inputs[name].storedValue
-		setNodeValue(name, value)
-	}
-	setOutputValues()
-})
+$form.addEventListener("input", handleInputChange)
 
 window.addEventListener("load", () => {
-	formatInputValues()
 	initStoredValues()
 	setOutputValues()
+	setEmptyBtnOpacity()
 })
+
+function formIsEmpty() {
+	const someFieldIsNotEmpty = Object.values(inputs).some((input) => {
+		return input.storedValue !== ""
+	})
+	return !someFieldIsNotEmpty
+}
+
+function setEmptyBtnOpacity() {
+	if (formIsEmpty()) $btnReset.classList.add("btn-reset--empty")
+	else $btnReset.classList.remove("btn-reset--empty")
+}

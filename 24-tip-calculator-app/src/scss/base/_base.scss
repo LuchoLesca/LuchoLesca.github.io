@@ -11,14 +11,17 @@ body,
 h1,
 h2,
 h3,
-p,
-fieldset {
+p {
 	margin: 0;
 }
 
 body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: min(100%, 1440px);
 	min-height: 100vh;
+	margin: 0 auto;
 	background-color: var(--clr-neutral-cyan-400);
 }
 
@@ -40,7 +43,6 @@ a {
 
 main {
 	width: min(100%, 900px);
-	margin-inline: auto;
 
 	.main-title {
 		margin-bottom: 1.5em;

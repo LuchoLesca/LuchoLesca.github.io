@@ -1,7 +1,7 @@
-const calculate = (priceInput = 0, percentageInput = 0, peopleInput = 1) => {
-	const price = Number.parseFloat(priceInput)
-	const percentage = Number.parseFloat(percentageInput)
-	const people = Number.parseFloat(peopleInput)
+const calculate = (priceInput, percentageInput, peopleInput) => {
+	const price = Number.parseFloat(priceInput) || 0
+	const percentage = Number.parseFloat(percentageInput) || 0
+	const people = Number.parseFloat(peopleInput) || 1
 
 	const extraAmount = price * (percentage / 100)
 	const extraAmountPerPerson = (extraAmount / people).toFixed(2)
@@ -10,8 +10,8 @@ const calculate = (priceInput = 0, percentageInput = 0, peopleInput = 1) => {
 	const totalPerPerson = (total / people).toFixed(2)
 
 	return {
-		extraAmountPerPerson: extraAmountPerPerson || "0.00",
-		totalPerPerson: totalPerPerson || "0.00",
+		extraAmountPerPerson: extraAmountPerPerson,
+		totalPerPerson: totalPerPerson,
 	}
 }
 
