@@ -1,17 +1,20 @@
 section.services
-    .section-wrapper
-        article.sevice.service--with-left-text
-            +text-wrapper("Transform your brand", "We are full-service agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.")
-            img.sevice__img(src="", alt="")
+    article.service.service--with-left-text
+        img.service__img.mobile-image(src="./assets/images/mobile/image-transform.jpg", alt="yellow egg")
+        img.service__img.desktop-image(src="./assets/images/desktop/image-transform.jpg", alt="yellow egg")
+        +text-wrapper("Transform your brand", "We are a full-service agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.")
 
-        article.sevice.service--with-right-text
-            +text-wrapper("Stand out to the right audience", "Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places.")
-            img.sevice__img(src="", alt="")
+    article.service.service--with-right-text
+        img.service__img.mobile-image(src="./assets/images/mobile/image-stand-out.jpg", alt="pink coupe")
+        img.service__img.desktop-image(src="./assets/images/desktop/image-stand-out.jpg", alt="pink coupe")
+        +text-wrapper("Stand out to the right audience", "Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places.")
 
-        article.sevice
-            .desing-with-img-inside
+    article.service.designs
+        .design.design-graphic
+            .text__content
                 h2.title Graphic Design
                 p.text Great design makes you memoriable. We deliver artwork that underscores your brand message and captures potential client's attention.
-            .desing-with-img-inside
+        .design.design-photography
+            .text__content
                 h2.title Photography
                 p.text Increase your credibility by getting the most stunning, high-quality photos that improve your business image.

@@ -1,14 +1,17 @@
 
 header.header
     .top
-        .logo-wrapper
-            a(href="./"): img.logo(src="./assets/images/logo.svg", alt="Welcome to Sunnyside homepage")
-        nav.nav-wrapper
-            img.nav__hamburger#menu-btn(src="./assets/images/icon-hamburger.svg", alt="menu icon")
-            ul.nav
-                li.nav__item: a.nav__link(href="./" aria-label="about page") About
-                li.nav__item: a.nav__link(href="./" aria-label="services page") Services
-                li.nav__item: a.nav__link(href="./" aria-label="projects page") Projects
-                li.nav__item: a.nav__link.nav__link--modified(href="./" aria-label="contact us page") Contact
+        div
+            a(href="#"): img.logo(src="./assets/images/logo.svg", alt="Welcome to Sunnyside homepage")
+
+        button.mobile-nav-toggle(aria-controls="nav" aria-expanded="false")
+
+        //- nav
+        ul.nav#primaryNav(data-visible="false")
+            li.nav__item: a.nav__link(href="#" aria-label="about page") About
+            li.nav__item: a.nav__link(href="#" aria-label="services page") Services
+            li.nav__item: a.nav__link(href="#" aria-label="projects page") Projects
+            li.nav__item: a.nav__link.nav__link--modified(href="#" aria-label="contact us  page") Contact
     .hero
-        title.h1 We are creatives
+        h1.title We are creatives
+        img.arrow-down(src="./assets/images/icon-arrow-down.svg", alt="")
