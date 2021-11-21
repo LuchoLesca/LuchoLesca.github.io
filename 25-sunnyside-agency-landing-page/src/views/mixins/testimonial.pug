@@ -1,0 +1,9 @@
+- const imgSrcBase = "./assets/images/"
+
+mixin testimonial(imgSrc="", text="", name="", job="")
+    article.testimonial
+        img.testimonial__picture(src= `${imgSrcBase + imgSrc}`, alt= imgSrc)
+        p.testimonial__text= text
+        .user
+            p.user__name= name
+            p.user__job= job

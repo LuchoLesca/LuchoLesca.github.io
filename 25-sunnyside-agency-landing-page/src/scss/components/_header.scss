@@ -1,0 +1,146 @@
+@use "../functions" as *;
+
+.header {
+	height: rem(536px);
+	background-image: url("../assets/images/mobile/image-header.jpg");
+	background-size: cover;
+	background-position: bottom;
+	padding: 2em 1.5em 0;
+
+	@include mq(tablet) {
+		height: 800px;
+		padding: 2.8em 3.2em 0;
+		background-image: url("../assets/images/desktop/image-header.jpg");
+	}
+
+	.top {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 5.5em;
+
+		@include mq(desktop) {
+			margin-bottom: 7em;
+		}
+
+		.logo {
+			filter: invert(1);
+
+			@include mq(desktop) {
+				width: 170px;
+			}
+		}
+
+		.mobile-nav-toggle {
+			margin-left: auto;
+			width: 25px;
+			background: no-repeat center url("../assets/images/icon-hamburger.svg");
+			aspect-ratio: 1;
+			border: none;
+
+			@include mq(desktop) {
+				display: none;
+			}
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: 3em;
+
+			@media screen and (max-width: 767px) {
+				position: absolute;
+				top: rem(70px);
+				right: 0;
+				width: rem(330px);
+				flex-direction: column;
+
+				gap: 2em;
+				padding-block: 2.55em;
+				background-color: var(--clr-neutral-white, white);
+				transition: transform 300ms;
+				transform: scaleY(0);
+
+				&::after {
+					visibility: visible;
+				}
+			}
+
+			&[data-visible="true"] {
+				transform: scaleY(1);
+			}
+
+			&__link {
+				display: inline-block;
+				font-size: rem(20px);
+				color: var(--clr-neutral-gray-200);
+
+				@include mq(desktop) {
+					display: initial;
+					font-size: rem(18px);
+					color: var(--clr-neutral-white);
+				}
+
+				&--modified {
+					padding: 1.1em 2em;
+					background-color: var(--clr-primary-yellow);
+					font-size: 1rem;
+					text-transform: uppercase;
+					font-family: var(--ff-secundary);
+					color: var(--clr-neutral-gray-400);
+					border-radius: 2em;
+
+					&:hover {
+						color: var(--clr-neutral-white, white);
+						background-color: rgba(white, 0.3);
+					}
+
+					@include mq(desktop) {
+						background-color: var(--clr-neutral-white, white);
+					}
+				}
+			}
+
+			&::after {
+				position: absolute;
+				content: "";
+				width: 0;
+				height: 0;
+				right: 0;
+				top: 0;
+				border-bottom: 25px solid var(--clr-neutral-white, white);
+				border-left: 25px solid transparent;
+				transform: translateY(-100%);
+				visibility: hidden;
+			}
+
+			@media screen and (max-width: 767px) {
+				&::after {
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	.hero {
+		.title {
+			font-family: var(--ff-secundary);
+			font-size: rem(40px);
+			font-weight: 900;
+			color: var(--clr-neutral-white, white);
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			margin-bottom: 1.2em;
+
+			@include mq(desktop) {
+				margin-bottom: 1.7em;
+				font-size: rem(56px);
+			}
+		}
+
+		.arrow-down {
+			margin-inline: auto;
+		}
+	}
+}

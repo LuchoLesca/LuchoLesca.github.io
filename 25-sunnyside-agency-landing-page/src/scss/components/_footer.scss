@@ -1,0 +1,36 @@
+@use "../functions/" as *;
+
+.footer {
+	padding-block: rem(65px) rem(80px);
+	background-color: var(--clr-primary-cyan-50);
+
+	.logo {
+		width: rem(170px);
+		margin: 0 auto 2.6em;
+		filter: invert(33%) sepia(14%) saturate(4735%) hue-rotate(130deg)
+			brightness(84%) contrast(67%);
+	}
+
+	.secundary-nav {
+		display: flex;
+		justify-content: center;
+		gap: 3em;
+		margin-bottom: 4.8em;
+		font-size: 1.15rem;
+		color: var(--clr-primary-cyan-100);
+
+		&__item:hover {
+			color: var(--clr-neutral-white, white);
+		}
+	}
+	.socials {
+		display: flex;
+		justify-content: center;
+		gap: 2em;
+		color: var(--clr-primary-cyan-300);
+
+		&__item:hover img {
+			filter: brightness(0) invert(1);
+		}
+	}
+}

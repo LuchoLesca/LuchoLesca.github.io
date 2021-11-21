@@ -1,0 +1,58 @@
+@use "../functions/" as *;
+
+.testimonials {
+	padding-block: rem(64px) rem(90px);
+
+	@include mq(desktop) {
+		padding-block: rem(160px);
+	}
+
+	.title {
+		margin-bottom: rem(64px);
+		font-family: var(--ff-secundary);
+		text-transform: uppercase;
+		font-size: 1rem;
+		font-weight: 900;
+		letter-spacing: 5px;
+		color: var(--clr-neutral-gray-100);
+
+		@include mq(desktop) {
+			margin-bottom: rem(76px);
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.testimonials-wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 4.25em;
+}
+
+.testimonial {
+	flex-basis: 360px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+
+	@include mq(desktop) {
+		gap: 4em;
+	}
+
+	&__picture {
+		width: rem(72px);
+		border-radius: 50%;
+	}
+	&__text {
+		width: 330px;
+		color: var(--clr-neutral-gray-300);
+		font-size: 1.14rem;
+		line-height: 1.75;
+
+		@include mq(desktop) {
+			font-size: 1.1rem;
+		}
+	}
+}

@@ -1,0 +1,166 @@
+@use "../functions/" as *;
+
+.service {
+	display: grid;
+	grid-template-rows: auto 440px;
+	// overflow: hidden;
+
+	.service__img {
+		width: 100%;
+
+		&.desktop-image {
+			display: none;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		@include mq(desktop) {
+			&.mobile-image {
+				display: none;
+			}
+
+			&.desktop-image {
+				display: block;
+			}
+		}
+	}
+
+	@include mq(desktop) {
+		grid-template-rows: unset;
+		grid-template-columns: repeat(2, 1fr);
+		height: 600px;
+	}
+
+	.text-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1.5em;
+		padding-inline: 2em;
+
+		@include mq(desktop) {
+			align-items: flex-start;
+			width: 70%;
+			gap: 2em;
+			text-align: start;
+		}
+
+		.title,
+		.learn {
+			font-family: var(--ff-secundary);
+			color: var(--clr-neutral-gray-400);
+			font-weight: 900;
+		}
+
+		.title {
+			font-size: rem(31.5px);
+
+			@include mq(desktop) {
+				font-size: rem(40px);
+			}
+		}
+
+		.text {
+			color: var(--clr-neutral-gray-200);
+			font-size: 1.1rem;
+			line-height: 1.65;
+		}
+
+		.learn {
+			--underline-opacity-modifier: 0.4;
+			position: relative;
+			margin-top: 0.6em;
+			text-transform: uppercase;
+
+			&::before {
+				position: absolute;
+				content: "";
+				left: 50%;
+				bottom: -1px;
+				height: 8px;
+				z-index: -1;
+				width: 110%;
+				border-radius: 1em;
+				background-color: var(--clr-underline-learn);
+				transform: translateX(-50%);
+				opacity: var(--underline-opacity-modifier);
+			}
+
+			&:hover {
+				--underline-opacity-modifier: 1;
+			}
+		}
+	}
+
+	&--with-right-text {
+		--clr-underline-learn: var(--clr-primary-red);
+		@include mq(desktop) {
+			.text-wrapper {
+				margin-left: 10%;
+			}
+		}
+	}
+
+	&--with-left-text {
+		--clr-underline-learn: var(--clr-primary-yellow);
+
+		.text-wrapper {
+			@include mq(desktop) {
+				order: -1;
+				margin-left: 19%;
+			}
+		}
+	}
+
+	&.designs {
+		grid-template-rows: repeat(2, 600px);
+	}
+
+	.design {
+		position: relative;
+		background: no-repeat center/cover var(--background-src);
+
+		.text__content {
+			position: absolute;
+			width: 350px;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+			bottom: 3.7em;
+		}
+
+		.title,
+		.text {
+			color: var(--text-color);
+		}
+
+		.title {
+			font-family: var(--ff-secundary);
+			font-size: 1.7rem;
+			margin-bottom: 1em;
+		}
+
+		.text {
+			font-size: rem(16.5px);
+			line-height: 1.7;
+			opacity: 0.8;
+		}
+	}
+
+	.design-graphic {
+		--background-src: url("../assets/images/mobile/image-graphic-design.jpg");
+		--text-color: var(--clr-primary-cyan-200, black);
+		@include mq(desktop) {
+			--background-src: url("../assets/images/desktop/image-graphic-design.jpg");
+		}
+	}
+
+	.design-photography {
+		--background-src: url("../assets/images/mobile/image-photography.jpg");
+		--text-color: var(--clr-primary-cyan-300, black);
+		@include mq(desktop) {
+			--background-src: url("../assets/images/desktop/image-photography.jpg");
+		}
+	}
+}

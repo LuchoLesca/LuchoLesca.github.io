@@ -1,0 +1,14 @@
+@use "../functions/" as *;
+
+.user {
+	&__name {
+		margin-bottom: 0.7em;
+		font-family: var(--ff-secundary);
+		font-weight: 900;
+		font-size: rem(18px);
+	}
+	&__job {
+		font-size: 0.9rem;
+		color: var(--clr-neutral-gray-100);
+	}
+}
