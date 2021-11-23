@@ -1,0 +1,47 @@
+@use "../functions/rem" as *;
+@use "../functions/clampBuilder" as *;
+@use "../abstracts/breakpoints" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: var(--ff-primary);
+}
+
+body,
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+body {
+	width: min(100%, 1440px);
+	min-height: 100vh;
+	margin-inline: auto;
+	background: no-repeat top right url("../assets/images/bg-top.svg"),
+		no-repeat bottom left url("../assets/images/bg-bottom.svg");
+	background-color: var(--clr-neutral-100);
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	padding: 0;
+	margin-block: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.main {
+	padding-inline: 1.5em;
+}

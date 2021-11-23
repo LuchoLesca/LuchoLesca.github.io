@@ -1,0 +1,16 @@
+mixin card(title="Title", price="0.00", features=[], classModifier=[], typeOfPrice="annually")
+    - let extraClasses = [...classModifier].join(" ")
+    
+    if typeOfPrice === "annually"
+        - extraClasses += " card--hidden"
+    article.card(class= extraClasses)
+        header.card__header
+            h2.title= title
+            p.price= price
+        main.card__main
+            ul.features
+                each feature in features
+                    li.feature
+                        p.text= feature
+        footer.card__footer
+            a.btn Learn More

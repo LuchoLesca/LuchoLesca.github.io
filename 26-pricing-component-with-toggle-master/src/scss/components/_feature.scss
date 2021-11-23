@@ -1,0 +1,15 @@
+@use "../functions/" as *;
+
+.features {
+	margin-bottom: rem(32px);
+}
+
+.feature {
+	font-size: 15.3px;
+	padding-block: 1.1em;
+	border-bottom: 1px solid var(--feature-border-color, gray);
+
+	&:first-child {
+		border-top: 1px solid var(--feature-border-color, gray);
+	}
+}

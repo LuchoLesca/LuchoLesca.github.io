@@ -1,0 +1,1 @@
+!function(){const e=document.getElementById("switch"),t=[...document.getElementsByClassName("card")];e.addEventListener("change",(()=>{t.forEach((e=>{e.classList.toggle("card--hidden")}))}))}();
