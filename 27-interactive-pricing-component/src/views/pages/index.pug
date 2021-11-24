@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Fonts
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+        //- Stylesheet
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="./assets/images/favicon-32x32.png", type="image/x-icon")
+        //- Scripts
+        //- script(src="./js/index.js" defer) 
+        //- Title
+        title Frontend Mentor | Interactive pricing component
+    body
+        .container
+            header.header
+                h1.title Simple, traffic-based pricing
+                span.description Sing-up for our 30-day trial.
+                span.description No credit carad required.
+            main.main
+                article.card
+                    .card__body
+                        .principal-content
+                            h2.views 100k pagesviews
+                            .slider-wrapper
+                                input(type="range" min="0" max="4" step="any")
+                            .price
+                                span.price__amount $16.00
+                                span.price__periodicity / month
+                        .billing
+                            .billing__periodicity Monthly Billing
+                            .toggle-wrapper
+                                input(type="checkbox" id="switch")
+                                label(for="switch")
+                            .billing__periodicity Yearly Billing
+                            p.billing__discount -25%
+
+
+                    .card__footer
+                        ul.features
+                            li.features__item Unlimited websites
+                            li.features__item 100% data ownership
+                            li.features__item Email reports
+                        a.btn Start my trial
+            
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Simple, traffic-based pricing</h1><span class="description">Sing-up for our 30-day trial.</span><span class="description">No credit carad required.</span>
+      </header>
+      <main class="main">
+        <article class="card">
+          <div class="card__body">
+            <div class="principal-content">
+              <h2 class="views">100k pagesviews</h2>
+              <div class="slider-wrapper">
+                <input type="range" min="0" max="4" step="any">
+              </div>
+              <div class="price"><span class="price__amount">$16.00</span><span class="price__periodicity">/ month</span></div>
+            </div>
+            <div class="billing">
+              <div class="billing__periodicity">Monthly Billing</div>
+              <div class="toggle-wrapper">
+                <input type="checkbox" id="switch">
+                <label for="switch"></label>
+              </div>
+              <div class="billing__periodicity">Yearly Billing</div>
+              <p class="billing__discount">-25%</p>
+            </div>
+          </div>
+          <div class="card__footer">
+            <ul class="features">
+              <li class="features__item">Unlimited websites</li>
+              <li class="features__item">100% data ownership</li>
+              <li class="features__item">Email reports</li>
+            </ul><a class="btn">Start my trial</a>
+          </div>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
