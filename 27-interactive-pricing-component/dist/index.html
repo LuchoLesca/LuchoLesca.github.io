@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <script src="./js/index.js" defer> </script>
     <title>Frontend Mentor | Interactive pricing component</title>
   </head>
   <body>
@@ -19,17 +20,17 @@
         <article class="card">
           <div class="card__body">
             <div class="principal-content">
-              <h2 class="views">100k pagesviews</h2>
+              <h2 class="views" id="views">100k</h2>
               <div class="slider-wrapper">
-                <input type="range" min="0" max="4" step="any">
+                <input id="slider-range" type="range" min="1" max="5" value="1">
               </div>
-              <div class="price"><span class="price__amount">$16.00</span><span class="price__periodicity">/ month</span></div>
+              <div class="price"><span class="price__amount" id="price">16.00</span><span class="price__periodicity">/ month</span></div>
             </div>
             <div class="billing">
               <div class="billing__periodicity">Monthly Billing</div>
               <div class="toggle-wrapper">
-                <input type="checkbox" id="switch">
-                <label for="switch"></label>
+                <input id="discount-toggle" type="checkbox">
+                <label for="discount-toggle"></label>
               </div>
               <div class="billing__periodicity">Yearly Billing</div>
               <p class="billing__discount">-25%</p>

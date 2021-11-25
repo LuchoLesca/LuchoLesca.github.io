@@ -12,7 +12,7 @@ html(lang="en")
         link(rel="stylesheet", href="./css/style.css")
         link(rel="shortcut icon", href="./assets/images/favicon-32x32.png", type="image/x-icon")
         //- Scripts
-        //- script(src="./js/index.js" defer) 
+        script(src="./js/index.js" defer) 
         //- Title
         title Frontend Mentor | Interactive pricing component
     body
@@ -25,17 +25,17 @@ html(lang="en")
                 article.card
                     .card__body
                         .principal-content
-                            h2.views 100k pagesviews
+                            h2.views#views 100k
                             .slider-wrapper
-                                input(type="range" min="0" max="4" step="any")
+                                input#slider-range(type="range" min="1" max="5" value="1")
                             .price
-                                span.price__amount $16.00
+                                span.price__amount#price 16.00
                                 span.price__periodicity / month
                         .billing
                             .billing__periodicity Monthly Billing
                             .toggle-wrapper
-                                input(type="checkbox" id="switch")
-                                label(for="switch")
+                                input#discount-toggle(type="checkbox")
+                                label(for="discount-toggle")
                             .billing__periodicity Yearly Billing
                             p.billing__discount -25%
 

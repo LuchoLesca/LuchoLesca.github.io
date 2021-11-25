@@ -107,6 +107,12 @@ a {
 			text-transform: uppercase;
 			letter-spacing: 0.08em;
 
+			&::after {
+				content: " pageviews";
+				color: currentColor;
+				font: inherit;
+			}
+
 			@include mq(tablet) {
 				justify-self: flex-start;
 			}
@@ -162,6 +168,12 @@ a {
 				font-size: clampBuilder(2, 2.45);
 				font-weight: 800;
 				color: var(--clr-neutral-500, black);
+
+				&::before {
+					content: "$";
+					color: currentColor;
+					font: inherit;
+				}
 			}
 
 			&__periodicity {
@@ -202,7 +214,7 @@ a {
 					content: "";
 					position: absolute;
 					top: 50%;
-					right: 0;
+					left: 0;
 					height: 14px;
 					aspect-ratio: 1;
 					margin-inline: 4px;
@@ -212,7 +224,8 @@ a {
 				}
 
 				input:checked + label::after {
-					left: 0;
+					left: unset;
+					right: 0;
 				}
 
 				label:active:after {
