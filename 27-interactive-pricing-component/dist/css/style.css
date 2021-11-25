@@ -33,6 +33,7 @@ p {
 body {
   width: min(100%, 1440px);
   min-height: 100vh;
+  margin-inline: auto;
   text-align: center;
   background-color: var(--clr-neutral-100, lightgray);
 }
@@ -58,7 +59,7 @@ a {
   background-image: url("../assets/images/pattern-circles.svg"), url("../assets/images/bg-pattern.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: center 56px, top left;
-  background-size: auto, auto min(106vw, 500px);
+  background-size: auto, 100% min(106vw, 430px);
 }
 
 .header {
@@ -66,15 +67,20 @@ a {
   margin-inline: auto;
   margin-bottom: 4.1875rem;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    margin-bottom: 5.625rem;
+  }
+}
 .header .title {
   margin-bottom: 0.35em;
-  font-size: 1.25rem;
+  font-size: clamp( 		1.25rem, 		1.073943662rem + 0.7511737089vw, 		1.75rem 	);
   font-weight: 800;
   color: var(--clr-neutral-500);
 }
 .header .description {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: clamp( 		0.85rem, 		0.8218309859rem + 0.1201877934vw, 		0.93rem 	);
 }
 
 .card {
@@ -83,12 +89,17 @@ a {
   margin-inline: auto;
   background-color: var(--clr-neutral-white, white);
   border-radius: 0.5em;
-  -webkit-box-shadow: 0 10px 15px var(--clr-neutral-200);
-          box-shadow: 0 10px 15px var(--clr-neutral-200);
+  -webkit-box-shadow: 0 20px 20px var(--clr-neutral-200);
+          box-shadow: 0 20px 20px var(--clr-neutral-200);
 }
 .card__body {
-  padding: 2.1em 0;
+  padding: 2.1em 1.8em;
   border-bottom: 1px solid var(--clr-neutral-200, lightgray);
+}
+@media screen and (min-width: 768px) {
+  .card__body {
+    padding-block: 2.5em;
+  }
 }
 .card__body .principal-content {
   display: -ms-grid;
@@ -96,15 +107,54 @@ a {
   gap: 2em;
   margin-bottom: 2.4em;
 }
+@media screen and (min-width: 768px) {
+  .card__body .principal-content {
+    -ms-grid-columns: 1fr 1.2em 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 1fr 1.2em 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1.2em;
+    margin-bottom: 1.9em;
+  }
+  .card__body .principal-content > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .card__body .principal-content > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .card__body .principal-content > *:nth-child(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .card__body .principal-content > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+}
 .card__body .views {
-  font-size: 0.78rem;
+  font-size: clamp( 		0.78rem, 		0.7483098592rem + 0.1352112676vw, 		0.87rem 	);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
-.card__body .slider-wrapper {
-  width: 85%;
-  margin-inline: auto;
+@media screen and (min-width: 768px) {
+  .card__body .views {
+    justify-self: flex-start;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__body .slider-wrapper {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 2 span;
+  }
 }
 .card__body .slider-wrapper input {
   -webkit-appearance: none;
@@ -143,26 +193,36 @@ a {
           align-items: center;
   gap: 0.5em;
 }
+@media screen and (min-width: 768px) {
+  .card__body .price {
+    justify-self: flex-end;
+  }
+}
 .card__body .price__amount {
-  font-size: 2rem;
+  font-size: clamp( 		2rem, 		1.8415492958rem + 0.676056338vw, 		2.45rem 	);
   font-weight: 800;
   color: var(--clr-neutral-500, black);
 }
 .card__body .price__periodicity {
-  font-size: 0.9rem;
+  font-size: clamp( 		0.9rem, 		0.8647887324rem + 0.1502347418vw, 		1rem 	);
 }
 .card__body .billing {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.5em;
+  gap: 0.75em;
+}
+@media screen and (min-width: 768px) {
+  .card__body .billing {
+    gap: 1em;
+  }
 }
 .card__body .billing__periodicity {
   font-size: 0.75rem;
@@ -171,7 +231,7 @@ a {
   display: none;
 }
 .card__body .billing .toggle-wrapper label {
-  width: 40px;
+  width: 42px;
   height: 22px;
   position: relative;
   display: block;
@@ -199,12 +259,25 @@ a {
 }
 .card__body .billing__discount {
   position: absolute;
-  right: 12px;
+  right: -5px;
   background-color: var(--clr-primary-soft-orange);
   color: var(--clr-primary-orange);
   font-size: 0.65rem;
-  padding: 0.3em 0.7em;
+  font-weight: 800;
+  padding: 0.25em 0.6em;
   border-radius: 1em;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.card__body .billing__discount::after {
+  content: " discount";
+  color: currentColor;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .card__body .billing__discount::after {
+    display: initial;
+  }
 }
 .card__footer {
   display: -webkit-box;
@@ -217,10 +290,20 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1.5em 0 2em;
+  gap: 2em;
+  padding-block: 1.5em 2em;
 }
-.card__footer .features {
-  margin-bottom: 2em;
+@media screen and (min-width: 768px) {
+  .card__footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-block: 2em;
+  }
 }
 .card__footer .features > * + * {
   margin-top: 0.85em;
@@ -230,7 +313,12 @@ a {
 }
 .card__footer .features__item::before {
   content: url("../assets/images/icon-check.svg");
-  margin-right: 1em;
+  margin-right: 1.2em;
+}
+@media screen and (min-width: 768px) {
+  .card__footer .features {
+    text-align: start;
+  }
 }
 .card__footer .btn {
   width: 170px;
@@ -239,4 +327,9 @@ a {
   color: var(--clr-primary-soft-blue);
   background-color: var(--clr-neutral-500, black);
   border-radius: 5em;
+}
+@media screen and (min-width: 768px) {
+  .card__body, .card__footer {
+    padding-inline: 2.8em;
+  }
 }
