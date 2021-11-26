@@ -1,5 +1,4 @@
 @use "../abstracts/colors" as *;
-@use "../abstracts/fonts" as *;
 
 :root {
 	@each $type, $name in $colors {

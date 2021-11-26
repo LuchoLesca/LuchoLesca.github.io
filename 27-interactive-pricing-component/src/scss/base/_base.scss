@@ -151,6 +151,14 @@ a {
 					border: none;
 					box-shadow: 0 20px 15px var(--clr-primary-soft-cyan, lightcyan);
 				}
+
+				&:active {
+					cursor: pointer;
+					&::-webkit-slider-thumb,
+					&::-moz-range-thumb {
+						background-color: hsl(174, 68%, 41%);
+					}
+				}
 			}
 		}
 
@@ -208,6 +216,13 @@ a {
 					display: block;
 					border-radius: 16px;
 					background-color: var(--clr-neutral-300, lightgray);
+
+					@media (hover: hover) {
+						&:hover {
+							cursor: pointer;
+							background-color: var(--clr-primary-cyan, cyan);
+						}
+					}
 				}
 
 				label::after {
@@ -295,6 +310,13 @@ a {
 			color: var(--clr-primary-soft-blue);
 			background-color: var(--clr-neutral-500, black);
 			border-radius: 5em;
+
+			@media (hover: hover) {
+				&:hover {
+					cursor: pointer;
+					color: var(--clr-neutral-white, white);
+				}
+			}
 		}
 	}
 
