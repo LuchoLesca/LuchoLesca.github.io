@@ -1,0 +1,17 @@
+@use "../abstracts/breakpoints" as *;
+
+@mixin mq($key) {
+	$size: map-get($breakpoints, $key);
+
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin mqmin($key) {
+	$size: map-get($breakpoints, $key);
+
+	@media screen and (max-width: ($size - 1px)) {
+		@content;
+	}
+}

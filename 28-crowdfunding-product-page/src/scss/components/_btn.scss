@@ -1,0 +1,23 @@
+@use "../functions/" as *;
+
+.btn {
+	background-color: var(--clr-primary-cyan, cyan);
+	font-size: rem(13px);
+	font-weight: 700;
+	color: var(--clr-neutral-white, white);
+	padding: 1.25em;
+	letter-spacing: 0.5px;
+	text-align: center;
+	border-radius: 2em;
+	border: none;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--clr-primary-dark-cyan);
+		}
+	}
+}
+
+.btn-reward {
+	width: 157px;
+}

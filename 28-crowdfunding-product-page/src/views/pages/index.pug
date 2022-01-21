@@ -1,0 +1,117 @@
+include ../mixins/plan
+
+-
+    const plans = [
+        {
+            title: "Bamboo Stand",
+            promotion: "25",
+            description: "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
+            amountAvailable: "101",
+        },
+        {
+            title: "Black Edition Stand",
+            promotion: "75",
+            description: "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+            amountAvailable: "64",
+        },
+        {
+            title: "Mahogany Special Edition",
+            promotion: "200",
+            description: "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+            amountAvailable: "0",
+            classModifiers: "plan--disabled"
+        },
+    ]
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Fonts
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
+        //- Stylesheet
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="./assets/images/favicon-32x32.png", type="image/x-icon")
+        //- Scripts
+        script(src="./js/index.js" defer) 
+        //- Title
+        title Frontend Mentor | Crowdfunding product page
+    body
+        header.header
+            nav
+                .logo-wrapper 
+                    img.logo(src="./assets/images/logo.svg", alt="Welcome to crowdfund")
+                .menu-btn-wrapper
+                    input#menu-btn(type="checkbox", name="btn-check")
+                    label(for="menu-btn") 
+                    img.menu-btn(src="./assets/images/icon-hamburger.svg", alt="menu")
+                    img.menu-btn-close(src="./assets/images/icon-close-menu.svg", alt="close menu")
+                .principal-nav-wrapper#principal-nav-wrapper
+                    ul.principal-nav
+                        li.principal-nav__item: a.principal-nav__link About
+                        li.principal-nav__item: a.principal-nav__link Discover
+                        li.principal-nav__item: a.principal-nav__link Get Started
+        
+        main.main
+            section.top
+                img.logo(src="./assets/images/logo-mastercraft.svg", alt="logo")
+                h1.title Mastercraft Bamboo Monitor Riser
+                h2.subtitle A beautilfully handcrafted monitor stand to reduce neck and eye strain.
+                .CTA-wrapper
+                    a.btn.back#back-project-btn(href="#") Back this project
+                    .bookmark                        
+                        input(type="checkbox" id="check")
+                        label(for="check") 
+                        img.icon(src="./assets/images/icon-bookmark.svg", alt="bookmark")
+                        p.text
+            
+            section.stats-wrapper
+                ul.stats
+                    li.stats__item
+                        p.amount $89,914
+                        p.details of $100,000 backed
+                    li.stats__item
+                        p.amount 5,007
+                        p.details total backers
+                    li.stats__item
+                        p.amount 56
+                        p.details days left
+                .progressbar
+                //- .progressbar-wrapper 
+                    .progressbar
+            
+            section.about
+                h2.title About this project
+                .description
+                    p.paragraph The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
+                    p.paragraph Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.
+                ul.plans#plans
+                    each plan in plans
+                        li.plans__item
+                            +plan(plan.title, plan.promotion, plan.description, plan.amountAvailable, plan.classModifiers, false)
+       
+        .modal-wrapper#modal-wrapper
+            .modal
+                .modal__header
+                    h2.title Back this project
+                    img.modal-btn-close#close-modal-btn(src="./assets/images/icon-close-modal.svg", alt="close modal")
+                p.paragraph Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+                ul.plans
+                    li.plans__item
+                        +plan("Pledge with no reward", "", "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.", "100", "plan--no-reward", true)
+                    each plan in plans
+                        li.plans__item
+                            +plan(plan.title, plan.promotion, plan.description, plan.amountAvailable, plan.classModifiers, true)
+                            
+        .modal-wrapper#modal-wrapper-completed
+            .modal.modal-completed
+                img(src="./assets/images/icon-check.svg", alt="Pledge successfull")
+                h2.title Thanks for you support!
+                p.paragraph Your pledge brings us one step closet to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
+                a.btn.btn-reward Got it!
+
+

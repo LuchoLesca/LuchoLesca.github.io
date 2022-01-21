@@ -1,0 +1,43 @@
+mixin plan(title="", promotion="", description="", amountAvailable="0", classModifiers="", modal=false)
+    - const extraClasses = classModifiers
+
+    if !modal
+        //- article.plan(class= extraClasses)
+        article.plan(class= extraClasses data-name= title.toLowerCase())
+            .plan__body
+                .plan__top
+                    .texts
+                        h3.plan__title= title
+                        p.plan__promotion #{`Pledge $${promotion} or more`}
+                .plan__middle
+                    p.plan__description= description
+                .plan__bottom
+                    h3.plan__amount-available= amountAvailable
+                    if amountAvailable === "0"
+                        a.btn.btn-reward Out of Stock
+                    else
+                        a.btn.btn-reward Select Reward
+    else
+        //- article.plan(class= extraClasses)
+        article.plan(class= extraClasses data-name= title.toLowerCase())
+            .plan__body
+                .plan__top
+                    .plan__check-wrapper
+                        input(type="radio", id= title, name="inputRadio")
+                        label(for= title)
+                    .texts
+                        h3.plan__title= title
+                        if promotion !== ""
+                            p.plan__promotion #{`Pledge $${promotion} or more`}
+                .plan__middle
+                    p.plan__description= description
+                if promotion !== ""
+                    .plan__bottom
+                        h3.plan__amount-available= amountAvailable
+        
+            .plan__footer
+                p.plan__footer-title Enter your pledge
+                form.form
+                    .input-wrapper
+                        input#pledgeInput
+                    button.btn Continue

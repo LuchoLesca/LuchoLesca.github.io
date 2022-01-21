@@ -1,0 +1,68 @@
+-
+    const plans = [
+        {
+            title: "Bamboo Stand",
+            promotion: "25",
+            description: "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
+            amountAvailable: "101"
+        },
+        {
+            title: "Black Edition Stand",
+            promotion: "75",
+            description: "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+            amountAvailable: "64"
+        },
+        {
+            title: "Mahogany Special Edition",
+            promotion: "200",
+            description: "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
+            amountAvailable: "0",
+            classModifiers: "plan--disabled"
+        },
+    ]
+
+section.modal
+    .top
+        h2.title Back this project
+        img.close(src="", alt="close modal")
+    .description
+        p.paragraph Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+    ul.plans
+        li.plans__item
+            article.plan
+                body.plan__body
+                    .plan__header
+                        .check-wrapper
+                            input(type="radio", name="no-reward")
+                        .text
+                            h3.plan__title Pledge with no reward
+                    .plan__main
+                        p.plan__description Choose to support us without a rewars if you simply belive in our project. As a backer, you will be signed up to receive product updates via email.
+                    .plan__footer
+                        h3.plan__amount-available= planamountAvailable
+                        a.plan__btn-reward Select Reward
+                footer.plan__footer
+                    p.footer__title Enter your pledge
+                    form.form
+                        input(type="text")
+                        button.btn(value="Continue")
+        each plan in plans
+            li.plans__item
+                article.plan
+                    body.plan__body
+                        .plan__top
+                            .check-wrapper
+                                input(type="radio", name= plan.title)
+                            .text
+                                h3.plan__title= plan.title
+                                p.plan__promotion= #{`Pledge $${plan.promotion} or more`}
+                        .plan__middle
+                            p.plan__description= plan.description
+                        .plan__bottom
+                            h3.plan__amount-available= planamountAvailable
+                            a.plan__btn-reward Select Reward
+                    footer.plan__footer
+                        p.footer__title Enter your pledge
+                        form.form
+                            input(type="text")
+                            button.btn(value="Continue")

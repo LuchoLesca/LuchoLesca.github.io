@@ -1,0 +1,141 @@
+@use "../functions/" as *;
+
+.plans {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+}
+
+.plan {
+	border: 1px solid var(--clr-neutral-light-gray, lightgray);
+	border-radius: 0.5em;
+
+	&__body,
+	&__footer {
+		padding-inline: 1.47em;
+		padding-block: 1.4em;
+
+		@include mq(tablet) {
+			padding: 2.25em 1.9em 2em;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.65em;
+
+		> * {
+			width: 100%;
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		.texts {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			gap: 0.5em;
+
+			@include mq(tablet) {
+				flex-direction: row;
+				align-items: center;
+				width: 100%;
+			}
+		}
+	}
+
+	&__title,
+	&__promotion,
+	&__description {
+		font-size: rem(14px);
+	}
+
+	&__title {
+		font-weight: 700;
+		@include mq(tablet) {
+			font-size: rem(18px);
+		}
+	}
+
+	&__promotion {
+		color: var(--clr-primary-cyan);
+		font-weight: 500;
+		@include mq(tablet) {
+			font-size: rem(15px);
+		}
+	}
+
+	&__middle {
+		@include mq(tablet) {
+		}
+	}
+
+	&__description {
+		color: var(--clr-neutral-gray);
+		line-height: 1.7;
+
+		@include mq(tablet) {
+			font-size: rem(15px);
+			line-height: 1.8;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.4em;
+
+		@include mq(tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	&__amount-available {
+		display: flex;
+		align-items: center;
+		gap: rem(10px);
+		font-size: rem(32px);
+		font-weight: 700;
+
+		&::after {
+			content: "left";
+			color: var(--clr-neutral-gray);
+			font-size: rem(14px);
+		}
+	}
+}
+
+.plan--no-reward {
+	.plan__body {
+		padding-block: 1.95em;
+	}
+
+	.plan__top {
+		margin-bottom: 0.6em;
+	}
+}
+
+.plan--selected {
+	border: 2px solid var(--clr-primary-cyan, cyan);
+
+	.plan__footer {
+		display: flex;
+	}
+}
+
+.plan--disabled {
+	opacity: 0.5;
+	pointer-events: none;
+
+	.btn {
+		background-color: var(--clr-neutral-gray);
+	}
+}
